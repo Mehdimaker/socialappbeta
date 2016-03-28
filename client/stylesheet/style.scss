@@ -1,0 +1,21 @@
+.container {
+  min-height: 100vh;
+
+  main {
+    margin-left: 210px;
+    padding:10px;
+	 h2.ui.dividing.header{
+	 	height:49px;
+	 	padding:3px 0 3px 10px;
+	 	margin:-10px -10px 0 -10px;
+	 	line-height: 49px;
+	 }   
+  }
+}
+
+.ui.basic.modal.disconnect{
+	text-align:center;
+	.actions{
+		text-align: center;
+	}
+}

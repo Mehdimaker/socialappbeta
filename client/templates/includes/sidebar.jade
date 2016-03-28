@@ -1,0 +1,53 @@
+template(name='sidebar')
+	.ui.sidebar.inverted.vertical.menu.visible
+		.item
+			h3 
+				|Social App Beta
+
+
+		if currentUser
+			a.item.modalsignout
+				i.grid.sign.out.icon.red
+				| Sign out
+		else
+			a.item(href="{{pathFor 'signIn'}}" class="{{activeRouteClass 'signIn'}}")
+				i.grid.sign.in.icon.blue
+				| Sign in
+			
+
+		a.item(href="{{pathFor 'dashboard'}}" class="{{activeRouteClass 'dashboard'}}")
+			i.grid.dashboard.icon
+			| Dashboard
+
+
+		.item
+			.header
+				|Posts
+			.menu
+				a.item
+					i.grid.plus.icon
+					| Submit Post
+				a.item
+					i.grid.bookmark.icon
+					| My Posts
+				a.item
+					i.grid.align.justify.icon
+					| All Posts
+				a.item
+					i.grid.marker.icon
+					| Map Posts
+
+		.item
+			.header
+				|Users
+			.menu
+				a.item(href="{{pathFor 'usersList'}}" class="{{activeRouteClass 'usersList'}}")
+					i.grid.users.icon
+					| Users List
+				a.item
+					i.grid.user.icon
+					| Friends List
+
+
+
+
