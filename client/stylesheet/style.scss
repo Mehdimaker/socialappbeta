@@ -4,7 +4,7 @@
   main {
     margin-left: 210px;
     padding:10px;
-	 h2.ui.dividing.header{
+	 h3.ui.dividing.header{
 	 	height:49px;
 	 	padding:3px 0 3px 10px;
 	 	margin:-10px -10px 0 -10px;
@@ -13,9 +13,39 @@
   }
 }
 
-.ui.basic.modal.disconnect{
+.modal.logout{
 	text-align:center;
 	.actions{
 		text-align: center;
 	}
+}
+
+.modal.signin, .modal.signup{
+	.close.icon{
+		padding: 0;
+		margin:0;
+	}
+	.menu{
+		margin:0px;
+		font-size: 1.2rem;
+	}
+	.button.submit{
+		margin:25px 0 0 0;
+	}
+}
+
+
+/* Tiny Modal Width */
+
+@media only screen and (max-width: 767px) {
+  .ui.tiny.modal {
+    width: 95%;
+    margin: 0em 0em 0em -47.5%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .ui.tiny.modal {
+    width: 300px;
+    margin: 0em 0em 0em -150px;
+  }
 }

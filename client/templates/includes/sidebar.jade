@@ -6,13 +6,18 @@ template(name='sidebar')
 
 
 		if currentUser
-			a.item.modalsignout
+			.item
+				|Hello {{currentUser.username}}
+			a.item.modallogout
 				i.grid.sign.out.icon.red
 				| Sign out
 		else
-			a.item(href="{{pathFor 'signIn'}}" class="{{activeRouteClass 'signIn'}}")
-				i.grid.sign.in.icon.blue
+			a.item.modalsignS(data-modal="signin")
+				i.grid.sign.in.icon.green
 				| Sign in
+			a.item.modalsignS(data-modal="signup")
+				i.grid.sign.in.icon.blue
+				| Sign up
 			
 
 		a.item(href="{{pathFor 'dashboard'}}" class="{{activeRouteClass 'dashboard'}}")

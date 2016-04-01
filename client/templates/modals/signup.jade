@@ -1,0 +1,19 @@
+template(name='signup')
+	.ui.modal.coupled.tiny.signup
+		i.close.icon
+		.ui.pointing.secondary.menu
+			a.item.menusignin Sign in
+			.active.item Sign up
+		.content.ui.form.signup.error
+			.field
+				label Username
+				input#signup-username(name="username" type='text')
+			.field
+				label Email
+				input#signup-email(name="email" type='email')
+			.field
+				label Password
+				input#signup-password(name="password" type='password')
+			.ui.blue.fluid.button.submit
+				| Register 
+				i.sign.in.icon.right

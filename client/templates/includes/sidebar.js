@@ -11,18 +11,3 @@ Template.sidebar.helpers({
   }
 });
 
-Template.sidebar.events({
-	'click .modalsignout': function() {
- 		$('.ui.basic.modal.disconnect').modal({
-	    closable  : true,
-	    onDeny    : function(){
-	      return ;
-	    },
-	    onApprove : function() {
-	      Meteor.logout();
-	    }
-	  })
-  	.modal('show');
-  }
-});
-

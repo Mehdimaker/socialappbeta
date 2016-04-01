@@ -1,18 +1,20 @@
 template(name='usersList')
-	h2.ui.dividing.header Users List
-	table.ui.single.line.table
+	h3.ui.dividing.header Users List
+	table.ui.single.line.table.inverted
 		thead
 			tr
 				th Id
 				th Username
 				th Email
-				th Picture
+				th CreatedAt
 		tbody
 			each users
 				tr
 					td {{_id}}
 					td {{username}}
-					td {{emails.address}}
+					td
+						each emails
+							{{address}} 
 					td {{createdAt}}
 					
 
