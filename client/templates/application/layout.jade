@@ -1,9 +1,14 @@
 template(name='layout')
 	.container
-		{{>logout}}
-		{{>signin}}
-		{{>signup}}
-		{{>sidebar}}   
+		+navbar
+		+sidebar
+		+signin
+		+signup
+		+signout
+		+forgotpass
+		if resetPassword
+			+newpass		
 		main
-			{{> yield}}
-	
+			+yield
+
+

@@ -1,0 +1,13 @@
+template(name='forgotpass')
+	.ui.modal.coupled.tiny.forgotpass
+		i.close.icon
+		.ui.pointing.secondary.menu
+			.active.item Forgot Password?
+		.content.ui.form.forgotpass.error
+			.field
+				label Enter your email
+				input#forgotpass-email(name="email" type='email')
+			.ui.fluid.orange.button.submit
+				| Recovery
+				i.icon.right
+

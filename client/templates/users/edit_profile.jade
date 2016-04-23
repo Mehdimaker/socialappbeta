@@ -1,0 +1,12 @@
+template(name='editProfile')
+	.ui.form.editprofile.error
+		.field
+			label Username
+			input#editprofile-username(name="username" type='text' value="{{currentUser.username}}")
+		.field
+			label Description
+			textarea#editprofile-description(name="description" type='text' value="{{currentUser.description}}" rows="3")
+		.ui.blue.button.submit
+			| Edit  
+		h1 Edit picture
+		input.myFileInput(type='file')

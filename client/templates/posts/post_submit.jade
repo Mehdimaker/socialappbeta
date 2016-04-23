@@ -1,0 +1,45 @@
+template(name='postSubmit')
+	.ui.form.postSubmit.error.segment
+		//Main Info
+		.field
+			label Title
+			input(name="title" type='text' )
+		.field
+			label Type
+			.ui.fluid.search.selection.dropdown
+				input(name='type', type='hidden')
+				i.dropdown.icon
+				.default.text Type
+				.menu
+					.item(data-value='Running')
+						i.af.flag
+						| Running
+					.item(data-value='Football')
+						i.af.flag
+						| Football
+					.item(data-value='Workout')
+						i.af.flag
+						| Workout
+		.field
+			label Description
+			textarea(name="description" type='text' rows="3")
+		//starting event
+		.fields
+			.field.eight.wide
+				label Starting Date
+				#startdate.ui.calendar
+					.ui.input.left.icon
+						i.calendar.icon
+						input(name="startdate" type='text' placeholder='Start date')
+			.field.eight.wide
+				label Starting Hour
+				#starthour.ui.calendar
+					.ui.input.left.icon
+						i.time.icon
+						input(name="starthour" type='text' placeholder='Start hour')
+		//localisation
+		.field
+			label Address
+			input#autocomplete.autoo(placeholder="Votre adresse..." name="address" type='text' )
+		.ui.blue.button.submit
+			| Insert Post  

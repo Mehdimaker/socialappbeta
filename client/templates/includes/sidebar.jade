@@ -1,57 +1,27 @@
 template(name='sidebar')
 	.ui.sidebar.inverted.vertical.menu.visible
-		.item
-			h3 
-				|Social App Beta
-
-
-		if currentUser
-			.item
-				|Hello {{currentUser.username}}
-			a.item.modallogout
-				i.grid.sign.out.icon.red
-				| Sign out
-		else
-			a.item.modalsignS(data-modal="signin")
-				i.grid.sign.in.icon.green
-				| Sign in
-			a.item.modalsignS(data-modal="signup")
-				i.grid.sign.in.icon.blue
-				| Sign up
-			
-
+		
 		a.item(href="{{pathFor 'dashboard'}}" class="{{activeRouteClass 'dashboard'}}")
 			i.grid.dashboard.icon
 			| Dashboard
-
-
-		.item
-			.header
-				|Posts
-			.menu
-				a.item
-					i.grid.plus.icon
-					| Submit Post
-				a.item
-					i.grid.bookmark.icon
-					| My Posts
-				a.item
-					i.grid.align.justify.icon
-					| All Posts
-				a.item
-					i.grid.marker.icon
-					| Map Posts
-
-		.item
-			.header
-				|Users
-			.menu
-				a.item(href="{{pathFor 'usersList'}}" class="{{activeRouteClass 'usersList'}}")
-					i.grid.users.icon
-					| Users List
-				a.item
-					i.grid.user.icon
-					| Friends List
+		a.item(href="{{pathFor 'postSubmit'}}" class="{{activeRouteClass 'postSubmit'}}")
+			i.grid.plus.icon
+			| Post Submit
+		a.item(href="{{pathFor 'myPosts'}}" class="{{activeRouteClass 'myPosts'}}")
+			i.grid.bookmark.icon
+			| My Posts
+		a.item(href="{{pathFor 'postsList'}}" class="{{activeRouteClass 'postsList'}}")
+			i.grid.align.justify.icon
+			| Posts List
+		a.item(href="{{pathFor 'mapPosts'}}" class="{{activeRouteClass 'mapPosts'}}")
+			i.grid.marker.icon
+			| Map Posts
+		a.item(href="{{pathFor 'usersList'}}" class="{{activeRouteClass 'usersList'}}")
+			i.grid.users.icon
+			| Users List
+		a.item
+			i.grid.user.icon
+			| Friends List
 
 
 

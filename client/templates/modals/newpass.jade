@@ -1,0 +1,12 @@
+template(name='newpass')
+	.ui.modal.coupled.tiny.newpass
+		i.close.icon
+		.ui.pointing.secondary.menu
+			.active.item New Password
+		.content.ui.form.newpass.error
+			.field
+				label Enter a new password
+				input#newpass-password(name="password" type='password')
+			.ui.fluid.purple.button.submit
+				| Change password
+				i.icon.right

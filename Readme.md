@@ -5,15 +5,25 @@
 *	meteor remove insecure
 *	meteor add iron:router
 *	meteor add semantic:ui flemay:less-autoprefixer jquery
-*	meteor add accounts-ui
+*	meteor add accounts-base
 *	meteor add accounts-password
+* meteor add cfs:standard-packages
+* meteor add cfs:gridfs
+* meteor add mrt:googlemaps
+
 
 
 ##TO DO
 * faire fonctionner sass
-* trouver comment voir email du curseur user
-* utiliser les callbac account pour se logger
 * utiliser les helpers de date pour format time
+* corriger Set username
+
+###Login
+* ajouter checkbox accepter les term
+* afficher nouveau modal avec les term en detail
+* detecter si mail ou username deja present dans la base de donnée
+
+###Avatar
+* ajouter loading image
 
 ##PBLMS
-*modal submit with enter dont work

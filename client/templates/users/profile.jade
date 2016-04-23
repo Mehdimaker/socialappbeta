@@ -1,0 +1,17 @@
+template(name='profile')
+	.ui.grid.two.columns
+		.column
+			h1 My profile
+			.ui.card.small
+				.image
+					img(src="{{currentUser.avatarMega}}")
+				.content
+					a.header {{currentUser.username}}
+					.meta
+						span.date Joined in 2013
+					.description
+						| {{currentUser.description}}
+		.column
+			h1 Edit profile
+			+editProfile
+

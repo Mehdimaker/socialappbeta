@@ -1,36 +1,70 @@
+$color1:#333333;
+$color2:#2c3e50;
 .container {
   min-height: 100vh;
-
-  main {
-    margin-left: 210px;
-    padding:10px;
-	 h3.ui.dividing.header{
-	 	height:49px;
-	 	padding:3px 0 3px 10px;
-	 	margin:-10px -10px 0 -10px;
-	 	line-height: 49px;
-	 }   
-  }
+  padding-top:40px;
+	.ui.sidebar{
+		top:42px;
+		width:160px;
+		background-color:$color1;
+	.active{
+		border-left:4px solid white;
+	}
 }
 
-.modal.logout{
+.ui.navbar{
+	h3{
+		margin:0;
+		padding:0 0 0 16px;
+		line-height: 42px;
+		height:42px;
+	}
+		i.icon{
+			margin:0;
+			padding:0;
+		}
+		.item.profile {
+			padding:0 8px 0 8px;
+		
+			}
+		}
+  main {
+    margin-left: 160px;
+    padding:10px 20px;
+  }
+}
+a.upmember{
+	color:$color1;
+}
+a.upmember:hover{
+	color:red;
+}
+//avatar mini
+	img.ui.avatar.image{
+				margin-left:5px;
+				margin-right: 0px;
+				}
+
+
+/////////////////// MODALS ///////////////////
+.modal.signout{
 	text-align:center;
 	.actions{
 		text-align: center;
 	}
 }
-
-.modal.signin, .modal.signup{
-	.close.icon{
-		padding: 0;
-		margin:0;
-	}
+.modal.signin, .modal.signup , .modal.forgotpass,.modal.newpass{
 	.menu{
 		margin:0px;
 		font-size: 1.2rem;
 	}
 	.button.submit{
 		margin:25px 0 0 0;
+	}
+	.menuforgotpass{
+		float: right;
+		font-weight: normal;
+		cursor:pointer;
 	}
 }
 
@@ -42,10 +76,47 @@
     width: 95%;
     margin: 0em 0em 0em -47.5%;
   }
+  .modal.signin, .modal.signup, .modal.forgotpass, .modal.newpass{
+	.close.icon{
+		padding: 0;
+		margin: 8px 0 0 0;
+		
+	}
+	}
 }
 @media only screen and (min-width: 768px) {
   .ui.tiny.modal {
     width: 300px;
     margin: 0em 0em 0em -150px;
   }
+  .modal.signin, .modal.signup, .modal.forgotpass, .modal.newpass{
+	.close.icon{
+		padding: 0;
+		margin:0 -5px 0 0;
+	}
 }
+}
+@media only screen and (min-width: 992px) {
+.modal.signin, .modal.signup, .modal.forgotpass, .modal.newpass{
+	.close.icon{
+		padding: 0;
+		margin:10px 10px 0 0;
+	}
+}
+}
+
+
+
+// MAP
+//Animesh Nandi's answer is a bit old. Actually, to remove the 'powered by Google' logo I had to use the following code:
+
+.pac-container:after {
+    /* Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown */
+    background-image: none !important;
+    height: 0px;
+}
+#map {
+    height: 500px;
+    width: 100%;
+ }
+

@@ -1,0 +1,19 @@
+template(name='navbar')
+	.ui.top.inverted.fixed.menu.navbar
+		h3.item.borderless
+			|Social App Beta
+		.right.menu
+			if currentUser
+				a.item.profile(href="{{pathFor 'profile'}}")
+					| {{currentUser.username }}
+					img.avatar.ui.image(src="{{currentUser.avatarMini}}")
+				a.item.modalsignout
+					i.sign.out.icon.red.modalsignout
+			else
+				a.item.modalsignS(data-modal="signin")
+					| Sign-in
+					i.sign.in.icon.green
+				a.item.modalsignS(data-modal="signup")
+					| Sign-up
+					i.sign.in.icon.blue
+

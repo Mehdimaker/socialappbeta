@@ -1,0 +1,31 @@
+template(name="postItem")
+	.ui.segments
+		.ui.segment
+			if upmemberClass
+				a.upmember.right.floated(style="display:{{upmemberClass}}")
+					i.bookmark.remove.icon.large
+			else
+				i.right.floated.bookmark.icon.red.large
+			h3.header {{title}}
+			.meta(style="font-style:italic") {{type}}
+		.ui.segment
+			i.icon.calendar
+			|{{startdate}}
+			i.icon.wait
+			|{{starthour}}
+			i.icon.marker
+			|{{address}}			
+			i.icon.users
+			|{{pluralize membersCount "member"}} 
+		.ui.segment
+			.description
+				p
+					| {{description}}
+		.ui.segment.right.aligned
+			.right.floated
+				|{{authorFindName authorId}}
+				img.ui.avatar.image(src='{{authorFindAvatar authorId}}')
+
+				
+		
+
