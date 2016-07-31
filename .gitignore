@@ -1,4 +1,4 @@
 .meteor
 .DS_Store
-.private/
+private/
 .setting.json
