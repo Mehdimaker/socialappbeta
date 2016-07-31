@@ -1,22 +1,7 @@
-### Pachages
-*	meteor add mquandalle:jade
-*	meteor add fourseven:scss
-*	meteor remove autopublish
-*	meteor remove insecure
-*	meteor add iron:router
-*	meteor add semantic:ui flemay:less-autoprefixer jquery
-*	meteor add accounts-base
-*	meteor add accounts-password
-* meteor add cfs:standard-packages
-* meteor add cfs:gridfs
-* meteor add mrt:googlemaps
-
-
 
 ##TO DO
-* faire fonctionner sass
-* utiliser les helpers de date pour format time
-* corriger Set username
+* probleme moment js
+* utiliser api openstreet map et enregistrer vill. et address complete
 
 ###Login
 * ajouter checkbox accepter les term

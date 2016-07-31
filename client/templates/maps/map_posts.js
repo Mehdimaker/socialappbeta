@@ -1,27 +1,28 @@
 Template.mapPosts.rendered = function() {
   // Initialize Map
   var startPosition = [48.8588, 2.350];
-  var map = L.map("map").setView(startPosition, 13);
+  var map = L.map("map").setView(startPosition, 10);
 
-  L.Icon.Default.imagePath = 'packages/bevanhunt_leaflet/images';
+  L.Icon.Default.imagePath = '/packages/bevanhunt_leaflet/images';
   L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
          minZoom: 2,
          maxZoom: 18,
-         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+
      }).addTo(map);
 
 //AJOUT DES MARKERS
-     // var query = Incidents.find();
-     // query.observe({
-     //   added: function (document) {
-     //     var marker = L.marker(document.latlng).addTo(map)
-     //     .bindPopup('Incident:'+document.type+'<br>Signalé le'+document.createdAt+'!')
+     var query = Posts.find();
+     query.observe({
+       added: function (document) {
+         var marker = L.marker(document.latlng).addTo(map)
+         .bindPopup(document.title+'<br>Type:'+document.type+'!')
 
           //  .on('click', function(event) {
           //    map.removeLayer(marker);
           //    Markers.remove({_id: document._id});
           //  });
-       //}  });
+       }  });
     //ADD marker
 
     //L.marker([48.8588, 2.350]).addTo(map).bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();

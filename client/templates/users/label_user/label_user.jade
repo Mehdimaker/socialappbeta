@@ -1,0 +1,29 @@
+template(name='labelUser')
+	if equals etat "host"
+		a.ui.image.label.profileMember(data-memberid="{{id}}")
+			img(src="{{member.avatarMini}}" data-memberid="{{id}}")
+			|{{member.username}}
+			.detail(data-memberid="{{member._id}}") Host
+
+	else if equals etat "member" 
+		a.ui.image.label.member.profileMember(data-memberid="{{id}}")
+			img(src="{{member.avatarMini}}" data-memberid="{{id}}")
+			|{{member.username}}
+
+	else if equals etat "comment"
+		a.avatar.profileMember
+			img(src='{{member.avatarMini}}' data-memberid="{{id}}")
+		.content
+			a.author.profileMember(data-memberid="{{id}}")
+				|{{member.username}}
+			.metadata
+				.date {{submittedText}}
+			.text
+				p
+					| {{body}}
+
+	else if equals etat "postPage"
+		a.ui.tiny.image.profileMember
+			img(src="{{member.avatarMega}}" height="100%" data-memberid="{{id}}")
+
+

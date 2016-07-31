@@ -6,7 +6,6 @@ template(name='usersList')
 				th Username
 				th Email
 				th Description
-				th CreatedAt
 		tbody
 			each users
 				tr
@@ -15,7 +14,6 @@ template(name='usersList')
 					td {{username}}
 					td
 						each emails
-							{{address}}
+							|{{address}}
 					td {{description}}
-					td {{createdAt}}
 

@@ -1,0 +1,130 @@
+template(name="postItem")
+	if equalsRoute "postPage"
+		if finish
+			.item.postitem
+				+labelUser(id=authorId etat="postPage")
+				.content
+					.meta {{authorFindUsername authorId}} vous propose,
+					h1.header {{title}}
+					.extra(style="margin-top:0")
+						.ui.right.floated.label.darkcolor
+							|FINISH
+							.detail
+								i.icon.flag.checkered.floated.right
+		else
+			.item.postitem
+				+labelUser(id=authorId etat="postPage")
+				.content
+					if myPost
+						.ui.icon.right.pointing.dropdown.postSetting
+							i.edit.icon.large(style="margin:0")
+							.menu
+								a.item.postDelete Delete
+								a.item(href="{{pathFor 'postEdit'}}") Edit
+					.meta {{authorFindUsername authorId}} vous propose,
+					h1.header {{title}}
+					.extra(style="margin-top:0")
+						if upmemberClass
+							.ui.right.floated.green.label
+								|JOINED
+								.detail
+									i.icon.checkmark.floated.right
+						else
+							a.upmember.ui.right.floated.label.red
+								|JOIN
+								.detail
+									|!
+
+	else 
+		if finish
+			.item.postitem
+					.content
+						a.header(href="{{pathFor 'postPage'}}") {{title}}
+						.meta
+							i.icon.calendar
+							|{{displayDay startPost}} at {{displayHour startPost}}
+							i.icon.marker
+							| {{city}}
+						.extra
+							+labelUser(id=authorId etat="host")
+							.ui.label 
+								i.icon.users
+								|{{membersCount}}
+							.ui.label 
+								i.icon.comments
+								|{{commentsCount}}
+							.ui.right.floated.label.darkcolor
+								|FINISH
+								.detail
+									i.icon.flag.checkered.floated.right
+		else
+			.item.postitem
+				.content
+					a.header(href="{{pathFor 'postPage'}}") {{title}}
+					if myPost
+						.ui.icon.right.pointing.dropdown.postSetting
+							i.edit.icon.large(style="margin:0")
+							.menu
+								a.item.postDelete Delete
+								a.item(href="{{pathFor 'postEdit'}}") Edit
+					.meta
+						i.icon.calendar
+						|{{displayDay startPost}} at {{displayHour startPost}}
+						i.icon.marker
+						| {{city}}
+					.extra
+						+labelUser(id=authorId etat="host")
+						.ui.label 
+							i.icon.users
+							|{{membersCount}}
+						.ui.label 
+							i.icon.comments
+							|{{commentsCount}}
+						if upmemberClass
+							.ui.right.floated.green.label
+								|JOINED
+								.detail
+									i.icon.checkmark.floated.right
+						else
+							a.upmember.ui.right.floated.label.red
+								|JOIN
+								.detail
+									|!
+					
+
+
+//|{{pluralize membersCount "member"}} 
+
+//.item.postitem
+	.ui.image.tiny.sportsctg
+		img(class="{{type}}" src="/{{type}}.svg")
+				
+//
+	.ui.segments
+		a(href="{{pathFor 'postPage'}}")
+			| postpage
+		.ui.segment
+			if upmemberClass
+				a.upmember.right.floated(style="display:{{upmemberClass}}")
+					i.bookmark.remove.icon.large
+			else
+				i.right.floated.bookmark.icon.red.large
+			h3.header {{title}}
+			.meta(style="font-style:italic") {{type}}
+		.ui.segment
+			i.icon.calendar
+			|{{startdate}}
+			i.icon.wait
+			|{{starthour}}
+			i.icon.marker
+			|{{address}}
+			i.icon.marker
+			|{{latlng}}
+			i.icon.users
+			|{{pluralize membersCount "member"}} 
+		.ui.segment.right.aligned
+			.right.floated
+				|{{authorFindName authorId}}
+				img.ui.avatar.image(src='{{authorFindAvatar authorId}}')
+
+				

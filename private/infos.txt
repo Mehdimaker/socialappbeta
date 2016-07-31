@@ -1,0 +1,20 @@
+Réseaux sociaux pour tout sportifs , débutant ou expérimenté.
+
+Création d'évènement sportifs du plus petit (petit footing du dimanche à deux) au plus grand (grande entrainement en extèrieur)
+stage payant. . .
+
+
+rencontre de sportifs 
+
+menu/
+profil			photos, calendrier/historique sportifs
+équipier			Mes équipes, chercher des équipier, par ville, par discipline …
+club			créer un club 
+événement		créer un événement et inviter des participants
+parametres …	sécurité et confidentialité
+
+
+Fil d'actualité ou pas ?
+publication photos/videos ? espace profil ?
+
+Ajouter disponibiliter au profil avec calendrier

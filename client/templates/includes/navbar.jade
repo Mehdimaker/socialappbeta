@@ -1,19 +1,55 @@
 template(name='navbar')
-	.ui.top.inverted.fixed.menu.navbar
-		h3.item.borderless
-			|Social App Beta
-		.right.menu
+	.ui.top.inverted.menu.navbar.fixed.navbarone
+		.ui.container
+			a(href="{{pathFor 'home'}}")
+				h3.item.borderless
+					|Sport App Beta
+		
 			if currentUser
-				a.item.profile(href="{{pathFor 'profile'}}")
-					| {{currentUser.username }}
+				.ui.dropdown.item.top.right.borderless
 					img.avatar.ui.image(src="{{currentUser.avatarMini}}")
-				a.item.modalsignout
-					i.sign.out.icon.red.modalsignout
+					//| {{currentUser.username }}
+					//i.dropdown.icon
+					.menu
+						a.item.profile(href="{{pathFor 'editProfile'}}")
+							|Edit profile
+							i.icon.setting.grid.align
+						.item.modalsignout
+							|Sign out
+							i.sign.out.icon.red.grid.align
 			else
-				a.item.modalsignS(data-modal="signin")
-					| Sign-in
-					i.sign.in.icon.green
-				a.item.modalsignS(data-modal="signup")
-					| Sign-up
-					i.sign.in.icon.blue
+				.ui.item.top.right.borderless
+					a.ui.basic.inverted.button.tiny.modalsignS(data-modal="signin")
+						| Sign In
+					a.ui.basic.inverted.button.tiny.modalsignS(data-modal="signup")
+						| Sign Up
+	.ui.navbar.menu.navbartwo.fixed.top
+		.ui.container
+			a.item.large(href="{{pathFor 'dashboard'}}" class="{{activeRouteClass 'dashboard'}}")
+				i.grid.dashboard.icon
+				| Dashboard
+			.right.menu
+				a.item(href="{{pathFor 'postSubmit'}}" class="{{activeRouteClass 'postSubmit'}}")
+					i.plus.icon
+					| Create training	
+				a.item(href="{{pathFor 'postsList'}}" class="{{activeRouteClass 'postsList'}}")
+					i.search.icon
+					| Find training
+			//a.item(href="{{pathFor 'mapPosts'}}" class="{{activeRouteClass 'mapPosts'}}")
+				i.grid.marker.icon
+				| Map Posts
+			//a.item(href="{{pathFor 'usersList'}}" class="{{activeRouteClass 'usersList'}}")
+				i.grid.users.icon
+				| Members
+			//a.item(href="{{pathFor 'myPosts'}}" class="{{activeRouteClass 'myPosts'}}")
+				i.grid.bookmark.icon
+				| My Posts
+			//.right.menu
+				.ui.category.search.item
+					.ui.transparent.icon.input(style="border-radius:none")
+						input.prompt(type='text', placeholder='Search training, members...')
+						i.search.link.icon
+					.results
+
+						
 

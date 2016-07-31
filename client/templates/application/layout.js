@@ -5,11 +5,22 @@ if (Accounts._resetPasswordToken) {
 Template.layout.helpers({
     resetPassword : function(t) {
       return Session.get('resetPassword');
+    },
+    routeIsNot : function(routeName){
+      if (Router.current().route.getName() === routeName) {
+        return false;
+      }else{
+        return true;
+      }
+    },
+    members : function(){
+      return Meteor.users.find();
     }
 });
 
 
 Template.layout.events({
+
 	'click .modalsignout': function() {
    $('.ui.basic.modal.signout').modal({
      closable  : true,
@@ -23,6 +34,8 @@ Template.layout.events({
    })
    .modal('show');
   },
+
+
   'click .modalsignS': function(event) {
     //show modal
     if($(event.target).data("modal") == "signin"){
@@ -39,7 +52,6 @@ Template.layout.events({
     $('.modal.forgotpass').modal('attach events', '.modal.signin .menuforgotpass');
     //form signin
     $('.ui.form.signin').form({
-      inline:true,
       onSuccess : function(){
         var email = $('#signin-email').val();
         var password = $('#signin-password').val();
@@ -82,9 +94,10 @@ Template.layout.events({
         }
       }
     });
+
+    
     //form signup
     $('.ui.form.signup').form({
-      inline:true,
       onSuccess : function(){
         var email = $('#signup-email').val();
         var password = $('#signup-password').val();
@@ -100,10 +113,18 @@ Template.layout.events({
           } else {
             console.log('creation success');
             $('.modal.signup').modal('hide');
-            var avatarMini = "user_icon_30.png";
-            var avatarMega = "user_icon_300.png";
+
+            updateUser= {
+              avatarMini : "/user_icon_30.png",
+              avatarMega : "/user_icon_300.png",
+              bio : "no bio",
+              gender: "no gender",
+              location: "nc",
+              language: "nc"
+            }
+
             var userId = Meteor.userId();
-            Meteor.users.update({_id:userId}, { $set: {avatarMini:avatarMini,avatarMega:avatarMega} });
+            Meteor.users.update({_id:userId}, { $set: updateUser });
           }
         }); 
        
@@ -111,14 +132,23 @@ Template.layout.events({
       fields: {
         username: {
           identifier: 'username',
-          rules: [
+          rules:[
             {
               type   : 'empty',
               prompt : 'Please enter a username'
             },
             {
-              type   : 'minLength[6]',
+              type   : 'minLength[5]',
               prompt : 'Your username must be at least {ruleValue} characters'
+            }
+            ,
+            {
+              type   : 'maxLength[16]',
+              prompt : 'Your username must be at max {ruleValue} characters'
+            },
+            {
+              type:'regExp[/^[a-z0-9_-]{5,16}$/gi]',
+              prompt: 'Your username is not correct, please dont use special characters and no space.'
             }
           ]
         },
@@ -152,7 +182,6 @@ Template.layout.events({
     });
     //form forgotpass
     $('.ui.form.forgotpass').form({
-      inline:true,
       onSuccess : function(){
         var email = $('#forgotpass-email').val();
     

@@ -1,0 +1,45 @@
+template(name="postsList")
+	
+	.ui.grid.stackable.postlist
+		
+		.ten.wide.column
+			//.ui.secondary.inverted.segment
+				.ui.header
+					|The next trainings 
+				.content
+					|Here the upcoming workouts, you will be even stronger!
+			if returnPostsToday
+				h4 Today
+				.ui.segment.tertiary
+					.ui.divided.items
+						each returnPostsToday
+							+postItem
+			if returnPostsTomorrow
+				h4 Tomorrow
+				.ui.segment.tertiary
+					.ui.divided.items
+						each returnPostsTomorrow
+							+postItem
+			if returnPostsNextdays
+				h4 Next days
+				.ui.segment.tertiary
+					.ui.divided.items
+						each returnPostsNextdays
+							+postItem
+						
+			
+		//.six.wide.column
+			.ui.secondary.inverted.segment
+				.ui.header
+					|Browse the map !
+				.content	
+			.ui.block.header
+				+mapPosts
+
+	//.ui.grid.two.columns.stackable.postlist
+		.column
+			
+		.column
+			.ui.divided.items
+				each posts
+					+postItem

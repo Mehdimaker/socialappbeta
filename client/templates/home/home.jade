@@ -1,0 +1,41 @@
+template(name='home')
+	.bgblack
+	.bgvideo
+		video(id="myVideo" autoplay loop muted poster="")
+			source(src="test.mp4" type="video/mp4")
+	section.home
+
+		.contentvertical
+			if currentUser
+				.ui.inverted.button.tiny.basic.dropdown.item
+					img.avatar.ui.image(src="{{currentUser.avatarMini}}")
+					| {{currentUser.username }}
+					//i.dropdown.icon
+					.menu
+						.item.profile(href="{{pathFor 'editProfile'}}")
+							|Edit profile
+							i.icon.setting.floated
+						.item.modalsignout
+							|Sign out
+							i.sign.out.icon.red
+			else
+				a.ui.basic.inverted.button.tiny.modalsignS(data-modal="signin")
+					| Sign In
+				a.ui.basic.inverted.button.tiny.modalsignS(data-modal="signup")
+					| Sign Up
+			
+		
+			.bandeau
+				h1 Sport App Beta
+				p The application that help you to meet sport partners !
+				if currentUser
+					a.ui.orange.button.huge(href="{{pathFor 'dashboard'}}")
+						| Join the comunity !
+				else
+					a.ui.orange.button.huge.modalsignS(data-modal="signin")
+						| Join the comunity !
+		
+
+
+
+

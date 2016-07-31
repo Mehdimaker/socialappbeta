@@ -1,0 +1,14 @@
+template(name='commentReplyItem')
+	.comment
+		a.avatar
+			img(src='{{authorFindAvatarMini authorId}}')
+		.content
+			a.author 
+				|{{authorFindUsername authorId}}
+			.metadata
+				.date {{submittedText}}
+			.text
+				p
+					| {{body}}
+			.actions
+				a.reply Reply

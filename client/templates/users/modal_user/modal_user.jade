@@ -1,0 +1,13 @@
+template(name='modalUser')
+	.ui.modal.basic.tiny.modalUser(class="{{member._id}}")
+		i.close.icon
+		.header
+			h1.item {{member.username}}
+		.content
+			img(src="{{member.avatarMega}}")
+
+			.extra
+			|{{member.bio}}
+
+
+

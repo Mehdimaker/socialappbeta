@@ -1,12 +1,109 @@
 template(name='editProfile')
-	.ui.form.editprofile.error
-		.field
-			label Username
-			input#editprofile-username(name="username" type='text' value="{{currentUser.username}}")
-		.field
-			label Description
-			textarea#editprofile-description(name="description" type='text' value="{{currentUser.description}}" rows="3")
-		.ui.blue.button.submit
-			| Edit  
-		h1 Edit picture
-		input.myFileInput(type='file')
+	//h1 Edit profile
+	.ui.grid.two.columns.stackable.editProfile
+		.column
+			.ui.card.small.inverted
+				.image
+					.mylabel
+						input.myFileInput(type='file' style="display:none")
+						i#testt.camera.retro.icon.large
+					img(src="{{currentUser.avatarMega}}")
+		.column
+			table.ui.very.basic.collapsing.table(style="width:100%;")
+				tbody
+					tr
+						td
+							|Username
+						td
+							| {{currentUser.username}}
+						td.right.aligned.modalusername
+							i.large.edit.icon
+					tr
+						td
+							|E-mail
+						td
+							each currentUser.emails
+								|{{address}}
+						td.right.aligned
+							//i.large.edit.icon
+					tr
+						td
+							|Password
+						td
+							|******
+						td.right.aligned
+							//i.large.edit.icon
+					tr
+						td
+							|Location
+						td
+							| {{currentUser.location}}
+						td.right.aligned.modallocation
+							i.large.edit.icon
+					tr
+						td
+							|Bio
+						td
+							| {{currentUser.bio}}
+						td.right.aligned.modalbio
+							i.large.edit.icon
+					//tr
+						td
+							|Gender
+						td
+							| {{currentUser.gender}}
+						td.right.aligned
+							i.large.edit.icon
+					//tr
+						td
+							|Location
+						td
+							| {{currentUser.location}}
+						td.right.aligned
+							i.large.edit.icon
+					//tr
+						td
+							|Language
+						td
+							| {{currentUser.language}}
+						td.right.aligned
+							i.large.edit.icon
+
+	
+
+	.ui.modal.tiny.editusername
+		i.close.icon
+		.ui.header 
+			|Edit your Username
+		.content.ui.form.forgotpass.error
+			.ui.form.editusername.error
+				.field
+					//label Username
+					input#editprofile-username(name="username" type='text' value="{{currentUser.username}}")
+				.ui.blue.button.submit.fluid
+					| Edit  
+
+	.ui.modal.tiny.editlocation
+		i.close.icon
+		.ui.header 
+			|Edit your location
+		.content.ui.form.forgotpass.error
+			.ui.form.editlocation.error
+				.field
+					//label Location
+					input#editprofile-location(name="bio" type='text' value="{{currentUser.location}}")
+				.ui.blue.button.submit.fluid
+					| Edit  
+
+	.ui.modal.tiny.editbio
+		i.close.icon
+		.ui.header
+			|Edit your bio
+		.content.ui.form.forgotpass.error
+			.ui.form.editbio.error
+				.field
+					//label Bio
+					textarea#editprofile-bio(name="bio" type='text' rows="3")
+						|{{currentUser.bio}}
+				.ui.blue.button.submit.fluid
+					| Edit  

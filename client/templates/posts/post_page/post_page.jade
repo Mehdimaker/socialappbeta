@@ -1,0 +1,79 @@
+template(name="postPage")
+	.ui.grid.stackable
+		.thirteen.wide.column
+			.ui.segment.tertiary
+				.ui.items
+					+postItem
+			.ui.segment.tertiary
+				h4.ui.header
+					i.unordered.list.icon
+					|Description:
+				|{{description}}
+			.ui.tertiary.segment
+				h4.ui.header
+					i.comments.icon
+					|Comments:
+				.ui.comments.threaded
+					each comments
+						+commentItem
+				if currentUser
+					+commentSubmit
+		.three.wide.column
+			.ui.tertiary.segment.map
+				h4.ui.header(style="padding-bottom:0")
+					i.calendar.icon
+					.content
+						| Day
+						.sub.header {{displayDay startPost}}
+				h4.ui.header
+					i.time.icon
+					.content
+						| Hour
+						.sub.header {{displayHour startPost}}
+			.ui.tertiary.segment.map
+				h4.ui.header
+					i.marker.icon
+					.content
+						| City
+						.sub.header {{city}}
+				#mappage(class="{{type}}")
+			.ui.tertiary.segment
+				h4.ui.header
+					i.users.icon
+					.content
+						| Members
+						//.sub.header {{pluralize membersCount "member"}} 
+				each member in members
+					+labelUser(id=member etat="member") 
+
+
+	//.ui.grid.stackable
+		.thirteen.wide.column
+			.ui.segment.tertiary
+				.ui.divided.items
+					+postItem
+			.ui.segment.tertiary
+				.ui.header
+					|Description:
+				|{{description}}
+			.ui.tertiary.segment
+				.ui.header
+					|Comments:
+				.ui.comments.threaded
+					each comments
+						+commentItem
+				if currentUser
+					+commentSubmit
+		.three.wide.column
+			.ui.tertiary.segment.map
+				.ui.header
+					|Description:
+				#mappage(class="{{type}}")
+			.ui.tertiary.segment
+				.ui.header
+					|Members:
+				each member in members
+					.ui.image.label.member
+						img(src="{{authorFindAvatarMini member}}")
+						|{{authorFindUsername member}}
+

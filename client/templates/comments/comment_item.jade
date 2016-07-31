@@ -1,0 +1,18 @@
+template(name='commentItem')
+	.comment
+		+labelUser(id=authorId etat="comment" submittedText=submittedText body=body)
+			//.actions
+				.ui.accordion
+					.title
+						| Reply
+					.content
+						.ui.form.ui.reply.form.commentSubmit.error
+							.field
+								textarea(name="body" type='text' rows="2" )
+							.ui.primary.submit.labeled.icon.button
+								i.icon.edit
+								|  Add Reply
+
+		if commentReply
+			.comments
+				+commentItem
