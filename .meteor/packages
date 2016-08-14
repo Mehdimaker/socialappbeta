@@ -20,14 +20,14 @@ fourseven:scss
 
 iron:router
 
-flemay:less-autoprefixer
+less
+juliancwirko:postcss
 semantic:ui
 
 accounts-password
 accounts-base
 check
 
-standard-minifier-css
 standard-minifier-js
 
 cfs:standard-packages

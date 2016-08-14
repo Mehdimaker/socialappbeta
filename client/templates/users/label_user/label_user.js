@@ -1,6 +1,7 @@
 Template.labelUser.helpers({
 	member: function() {    
-		console.log(this.id);
+		// OPTIMISER console log executer 4 fois pour quoi ?
+		//console.log(this.id);
     return Meteor.users.findOne(this.id);  
   }
 });
@@ -8,7 +9,6 @@ Template.labelUser.helpers({
 Template.labelUser.events({
   'click .profileMember': function(event) { 
     const memberId = $(event.target).data("memberid");
-    console.log(`.modal.modalUser.${memberId}`);
     $(`.modal.modalUser.${memberId}`).modal('show');
   }
 });

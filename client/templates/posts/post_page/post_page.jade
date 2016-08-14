@@ -1,50 +1,175 @@
 template(name="postPage")
-	.ui.grid.stackable
-		.thirteen.wide.column
-			.ui.segment.tertiary
-				.ui.items
-					+postItem
-			.ui.segment.tertiary
-				h4.ui.header
-					i.unordered.list.icon
-					|Description:
-				|{{description}}
-			.ui.tertiary.segment
-				h4.ui.header
-					i.comments.icon
-					|Comments:
-				.ui.comments.threaded
-					each comments
-						+commentItem
-				if currentUser
-					+commentSubmit
-		.three.wide.column
-			.ui.tertiary.segment.map
-				h4.ui.header(style="padding-bottom:0")
-					i.calendar.icon
+	.ui.grid.postPage
+
+
+		// MOBILE
+		.mobile.only.row
+			.sixteen.wide.column
+				.ui.segment.tertiary
+					.ui.items
+						+postItem
+				.ui.tertiary.segment
+					.ui.grid.two.column
+						.column
+							h5.ui.header(style="padding-bottom:0")
+								i.calendar.icon
+								.content
+									| Day
+									.sub.header {{displayDay startPost}}
+						.column
+							h5.ui.header.float.right
+								i.time.icon
+								.content
+									| Hour
+									.sub.header {{displayHour startPost}}
+				.ui.tertiary.segment		
+					h5.ui.header
+						i.marker.icon
+						.content
+							| City
+							.sub.header {{city}}
+					#mappage(class="{{type}}")
+				.ui.tertiary.segment
+					h5.ui.header(style="padding-bottom:0")
+						i.list.icon
+						.content
+							| Description
+					.content(style="white-space: pre")
+						p(style="white-space: pre") {{description}}
+				.ui.tertiary.segment
+					h5.ui.header(style="padding-bottom:0")
+						i.comments.icon
+						.content
+							| Comments
 					.content
-						| Day
-						.sub.header {{displayDay startPost}}
-				h4.ui.header
-					i.time.icon
+						.ui.comments.threaded
+							each comments
+								+commentItem
+						if currentUser
+							+commentSubmit
+				.ui.tertiary.segment
+					h5.ui.header
+						i.users.icon
+						.content
+							| Members
+							//.sub.header {{pluralize membersCount "member"}} 
+					each member in members
+						+labelUser(id=member etat="member") 
+		
+
+
+
+
+
+
+		// TABLET
+		.tablet.only.row
+			.twelve.wide.column
+				.ui.segment.tertiary
+					.ui.items
+						+postItem
+				.ui.tertiary.segment
+					h4.ui.header(style="padding-bottom:0")
+						i.list.icon
+						.content
+							| Description
 					.content
-						| Hour
-						.sub.header {{displayHour startPost}}
-			.ui.tertiary.segment.map
-				h4.ui.header
-					i.marker.icon
+						|{{description}}
+				.ui.tertiary.segment
+					h4.ui.header(style="padding-bottom:0")
+						i.comments.icon
+						.content
+							| Comments
 					.content
-						| City
-						.sub.header {{city}}
-				#mappage(class="{{type}}")
-			.ui.tertiary.segment
-				h4.ui.header
-					i.users.icon
+						.ui.comments.threaded
+							each comments
+								+commentItem
+						if currentUser
+							+commentSubmit
+
+			.four.wide.column
+				.ui.tertiary.segment
+					h4.ui.header(style="padding-bottom:0")
+						i.calendar.icon
+						.content
+							| Day
+							.sub.header {{displayDay startPost}}
+					h4.ui.header
+						i.time.icon
+						.content
+							| Hour
+							.sub.header {{displayHour startPost}}
+				.ui.tertiary.segment.map
+					h4.ui.header
+						i.marker.icon
+						.content
+							| City
+							.sub.header {{city}}
+					#mappage(class="{{type}}")
+				.ui.tertiary.segment
+					h4.ui.header
+						i.users.icon
+						.content
+							| Members
+							//.sub.header {{pluralize membersCount "member"}} 
+					each member in members
+						+labelUser(id=member etat="member") 
+
+
+
+		// COMPUTER
+		.computer.only.row
+			.thirteen.wide.column
+				.ui.segment.tertiary
+					.ui.items
+						+postItem
+				.ui.tertiary.segment
+					h4.ui.header(style="padding-bottom:0")
+						i.list.icon
+						.content
+							| Description
 					.content
-						| Members
-						//.sub.header {{pluralize membersCount "member"}} 
-				each member in members
-					+labelUser(id=member etat="member") 
+						|{{description}}
+				.ui.tertiary.segment
+					h4.ui.header(style="padding-bottom:0")
+						i.comments.icon
+						.content
+							| Comments
+					.content
+						.ui.comments.threaded
+							each comments
+								+commentItem
+						if currentUser
+							+commentSubmit
+
+			.three.wide.column
+				.ui.tertiary.segment
+					h4.ui.header(style="padding-bottom:0")
+						i.calendar.icon
+						.content
+							| Day
+							.sub.header {{displayDay startPost}}
+					h4.ui.header
+						i.time.icon
+						.content
+							| Hour
+							.sub.header {{displayHour startPost}}
+				.ui.tertiary.segment.map
+					h4.ui.header
+						i.marker.icon
+						.content
+							| City
+							.sub.header {{city}}
+					#mappage(class="{{type}}")
+				.ui.tertiary.segment
+					h4.ui.header
+						i.users.icon
+						.content
+							| Members
+							//.sub.header {{pluralize membersCount "member"}} 
+					each member in members
+						+labelUser(id=member etat="member") 
+
 
 
 	//.ui.grid.stackable

@@ -1,92 +1,89 @@
 template(name='postSubmit')
 	.ui.grid.stackable.centered
-		
-			.eleven.wide.column
-				.ui.form.postSubmit.error
-					.ui.segment.inverted.secondary
-						.ui.header
-							| CREATE YOUR TRAINING !
-						p Complete the form and give the opportunity to the community to join you!
+		.eleven.wide.column.left.aligned
+			.ui.equal.width.form.postSubmit.error
+				.ui.segment.bgtextcolor
+					.ui.header
+						| CREATE YOUR TRAINING !
+					p Complete the form and give the opportunity to the community to join you!
+				.field
+					label Title
+					input(name="title" type='text' )
+
+				.fields
 					.field
-
-						label Title
-						input(name="title" type='text' )
-
-					//
-						.field
-							label Type 
-								.ui.radio.checkbox
-									input(type='radio', name='frequency', checked='checked')
-									label Running
-									img.running(src="running.svg")
-
-								.ui.radio.checkbox
-									input(type='radio', name='frequency', checked='checked')
-									label Football
-									img.football(src="football.svg")
-
-								.ui.radio.checkbox
-									input(type='radio', name='frequency', checked='checked')
-									label Workout
-									img.workout(src="workout.svg")
-								.ui.radio.checkbox
-									input(type='radio', name='frequency', checked='checked')
-									label Cycled
-									img.cycle(src="cycle.svg")
-								.ui.radio.checkbox
-									input(type='radio', name='frequency', checked='checked')
-									label Boxing
-									img.boxing(src="boxing.svg")
-
-
-
-
-
-					//.field
-						label Type
-						.ui.fluid.search.selection.dropdown
-							input(name='type', type='hidden')
-							i.dropdown.icon
-							.default.text 
-							.menu
-								.item(data-value='running')
-									//img(src="running.svg")
-									| Running
-								.item(data-value='football')
-									//img(src="football.svg")
-									| Football
-								.item(data-value='workout')
-									//img(src="workout.svg")
-									| Workout
-								.item(data-value='boxing')
-									//img(src="boxing.svg")
-									| Boxing
-								.item(data-value='cycle')
-									//img(src="cycle.svg")
-									| Cycle
-					//.field.inverted
-						label Description 
-							.calculateChar {{calculateChar}}/100
-						textarea(name="description" type='text' rows="2" maxlength="100")
-					//starting event
-					.fields
-						.field.eight.wide
-							label Starting Date
-							#startdate.ui.calendar
-								.ui.input.left.icon
-									i.calendar.icon
-									input(name="startdate" type='text' )
-						.field.eight.wide
-							label Starting Hour
-							#starthour.ui.calendar
-								.ui.input.left.icon
-									i.time.icon
-									input(name="starthour" type='text' )
-					//localisation
+						label Starting Date
+						#startdate.ui.calendar
+							.ui.input.left.icon
+								i.calendar.icon
+								input(name="startdate" type='text' )
 					.field
-						label Address
-						input#autocomplete.autoo( placeholder="" name="address" type='text' )
+						label Starting Hour
+						#starthour.ui.calendar
+							.ui.input.left.icon
+								i.time.icon
+								input(name="starthour" type='text' )
+				.field
+					label Address
+					input#autocomplete.autoo( placeholder="" name="address" type='text' )
+				.field
+					.ui.blue.button.submit.large.basecolor
+						| Go !  
+				.ui.error.message
+
+
+
+
+				//
 					.field
-						.ui.blue.button.submit.large.basecolor
-							| Go !  
-					.ui.error.message
+						label Type 
+							.ui.radio.checkbox
+								input(type='radio', name='frequency', checked='checked')
+								label Running
+								img.running(src="running.svg")
+
+							.ui.radio.checkbox
+								input(type='radio', name='frequency', checked='checked')
+								label Football
+								img.football(src="football.svg")
+
+							.ui.radio.checkbox
+								input(type='radio', name='frequency', checked='checked')
+								label Workout
+								img.workout(src="workout.svg")
+							.ui.radio.checkbox
+								input(type='radio', name='frequency', checked='checked')
+								label Cycled
+								img.cycle(src="cycle.svg")
+							.ui.radio.checkbox
+								input(type='radio', name='frequency', checked='checked')
+								label Boxing
+								img.boxing(src="boxing.svg")
+
+				//.field
+					label Type
+					.ui.fluid.search.selection.dropdown
+						input(name='type', type='hidden')
+						i.dropdown.icon
+						.default.text 
+						.menu
+							.item(data-value='running')
+								//img(src="running.svg")
+								| Running
+							.item(data-value='football')
+								//img(src="football.svg")
+								| Football
+							.item(data-value='workout')
+								//img(src="workout.svg")
+								| Workout
+							.item(data-value='boxing')
+								//img(src="boxing.svg")
+								| Boxing
+							.item(data-value='cycle')
+								//img(src="cycle.svg")
+								| Cycle
+				//.field.inverted
+					label Description 
+						.calculateChar {{calculateChar}}/100
+					textarea(name="description" type='text' rows="2" maxlength="100")
+				//starting event

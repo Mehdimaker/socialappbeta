@@ -1,0 +1,77 @@
+@import '../../stylesheet/variables.scss';
+
+/*==============================
+=            MODALS            =
+==============================*/
+.modal.signout, .modal.delete{
+	text-align:center;
+	.actions{
+		text-align: center;
+	}
+}
+.modal.signin, .modal.signup , .modal.forgotpass,.modal.newpass{
+	.menu{
+		margin:0px;
+		font-size: 1.2rem;
+	}
+	.button.submit{
+		margin:25px 0 0 0;
+	}
+	.menuforgotpass{
+		float: right;
+		font-weight: normal;
+		cursor:pointer;
+	}
+}
+
+.ui.modal.basic.tiny.modalUser{
+	img{
+		border-radius:$bd-radius!important;
+	}
+}
+
+
+/*==============================
+=            MOBILE            =
+==============================*/
+@media only screen and (max-width: 767px) {
+	.ui.tiny.modal {
+		width: 95%;
+		margin: 0em 0em 0em -47.5%;
+	}
+	.modal.signin, .modal.signup, .modal.forgotpass, .modal.newpass, .modal.modalUser{
+		.close.icon{
+			padding: 0;
+			margin: 8px 0 0 0;
+
+		}
+	}
+
+}
+/*==============================
+=            TABLET            =
+==============================*/
+@media only screen and (min-width: 768px) {
+	.ui.tiny.modal {
+		width: 300px;
+		margin: 0em 0em 0em -150px;
+	}
+	.modal.signin, .modal.signup, .modal.forgotpass, .modal.newpass, .modal.modalUser{
+		.close.icon{
+			padding: 0;
+			margin:0 -5px 0 0;
+		}
+	}
+}
+
+/*================================
+=            COMPUTER            =
+================================*/
+@media only screen and (min-width: 992px) {
+	.modal.signin, .modal.signup, .modal.forgotpass, .modal.newpass, .modal.modalUser{
+		.close.icon{
+			padding: 0;
+			margin:10px 10px 0 0;
+		}
+	}
+}

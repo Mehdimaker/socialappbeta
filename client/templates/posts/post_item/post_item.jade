@@ -1,72 +1,44 @@
 template(name="postItem")
 	if equalsRoute "postPage"
 		if finish
-			.item.postitem
+			.item.postItem
 				+labelUser(id=authorId etat="postPage")
 				.content
 					.meta {{authorFindUsername authorId}} vous propose,
 					h1.header {{title}}
 					.extra(style="margin-top:0")
 						.ui.right.floated.label.darkcolor
-							|FINISH
+							|Finish
 							.detail
 								i.icon.flag.checkered.floated.right
 		else
-			.item.postitem
+			.item.postItem
 				+labelUser(id=authorId etat="postPage")
 				.content
-					if myPost
-						.ui.icon.right.pointing.dropdown.postSetting
-							i.edit.icon.large(style="margin:0")
-							.menu
-								a.item.postDelete Delete
-								a.item(href="{{pathFor 'postEdit'}}") Edit
 					.meta {{authorFindUsername authorId}} vous propose,
 					h1.header {{title}}
 					.extra(style="margin-top:0")
-						if upmemberClass
+						if myPost
+							a.ui.right.floated.grey.label(href="{{pathFor 'postEdit'}}")
+								|Edit
+								.detail
+									i.icon.edit.floated.right
+						else if upmemberClass
 							.ui.right.floated.green.label
-								|JOINED
+								|Joined
 								.detail
 									i.icon.checkmark.floated.right
 						else
 							a.upmember.ui.right.floated.label.red
-								|JOIN
+								|Join
 								.detail
 									|!
 
 	else 
 		if finish
-			.item.postitem
-					.content
-						a.header(href="{{pathFor 'postPage'}}") {{title}}
-						.meta
-							i.icon.calendar
-							|{{displayDay startPost}} at {{displayHour startPost}}
-							i.icon.marker
-							| {{city}}
-						.extra
-							+labelUser(id=authorId etat="host")
-							.ui.label 
-								i.icon.users
-								|{{membersCount}}
-							.ui.label 
-								i.icon.comments
-								|{{commentsCount}}
-							.ui.right.floated.label.darkcolor
-								|FINISH
-								.detail
-									i.icon.flag.checkered.floated.right
-		else
-			.item.postitem
+			.item.postItem
 				.content
 					a.header(href="{{pathFor 'postPage'}}") {{title}}
-					if myPost
-						.ui.icon.right.pointing.dropdown.postSetting
-							i.edit.icon.large(style="margin:0")
-							.menu
-								a.item.postDelete Delete
-								a.item(href="{{pathFor 'postEdit'}}") Edit
 					.meta
 						i.icon.calendar
 						|{{displayDay startPost}} at {{displayHour startPost}}
@@ -80,12 +52,42 @@ template(name="postItem")
 						.ui.label 
 							i.icon.comments
 							|{{commentsCount}}
-						if upmemberClass
+						a.ui.icon.right.floated.gotopage(href="{{pathFor 'postPage'}}")
+							i.angle.right.icon.huge(style="margin:0")
+						//.ui.right.floated.label.darkcolor
+							|FINISH
+							.detail
+								i.icon.flag.checkered.floated.right
+		else
+			.item.postItem
+				.content
+					a.header(href="{{pathFor 'postPage'}}") {{title}}
+					.meta
+						i.icon.calendar
+						|{{displayDay startPost}} at {{displayHour startPost}}
+						i.icon.marker
+						| {{city}}
+					.extra
+						+labelUser(id=authorId etat="host")
+						.ui.label 
+							i.icon.users
+							|{{membersCount}}
+						.ui.label 
+							i.icon.comments
+							|{{commentsCount}}
+						a.ui.icon.right.floated.gotopage(href="{{pathFor 'postPage'}}")
+							i.angle.right.icon.huge(style="margin:0")
+						//if myPost
+							a.ui.right.floated.grey.label(href="{{pathFor 'postEdit'}}")
+								|EDIT
+								.detail
+									i.icon.edit.floated.right
+						//else if upmemberClass
 							.ui.right.floated.green.label
 								|JOINED
 								.detail
 									i.icon.checkmark.floated.right
-						else
+						//else
 							a.upmember.ui.right.floated.label.red
 								|JOIN
 								.detail

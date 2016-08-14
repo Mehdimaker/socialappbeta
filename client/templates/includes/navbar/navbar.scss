@@ -1,0 +1,67 @@
+@import '../../../stylesheet/variables.scss';
+
+.ui.top.menu.navbar.fixed{
+	margin:0;
+	z-index:999;
+	height:44px;
+	background-color:$basecolor;
+	color:$textcolor!important;
+	//box-shadow:none;
+	border:none;
+
+	h3{
+		height: 44px;
+		color:$white;
+		padding-left:14px;
+		font-weight:bold!important;
+	}
+
+	.ui.basic.inverted.button.tiny.modalsignS{
+		margin-left:4px;
+	}
+
+	.ui.dropdown.item.borderless{
+		padding-right:14px;
+	}
+
+	.item.selected, .item.active:after{
+		font-weight:normal!important;
+		background-color:transparent!important;
+	}
+	.right.menu a.item.borderless{
+		color:$white!important;
+	}
+
+	.ui.dropdown .menu{
+
+		border-top:none;
+		border-right:2px solid $basecolor;
+		border-left:2px solid $basecolor;
+		border-bottom:2px solid $basecolor;
+
+		.item{
+			position:relative;
+			padding-right:37px!important;
+			color:$textcolor!important;
+			i{
+				color:$textcolor;
+
+				position: absolute;
+				right:0;
+			}
+		}
+
+	}
+}
+
+@media only screen and (max-width: 767px) {
+
+	.ui.top.menu.navbar.fixed{
+
+		.right.menu{
+
+		}
+
+	}
+
+}

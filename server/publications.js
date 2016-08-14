@@ -1,4 +1,6 @@
-//USERS
+/*=============================
+=            USERS            =
+=============================*/
 Meteor.publish('allUsers', function() {  
 	return Meteor.users.find();
 });
@@ -20,7 +22,9 @@ Meteor.publish("userData", function () {
   }
 });
 
-//AVATARS
+/*===============================
+=            AVATARS            =
+===============================*/
 Meteor.publish('allAvatars', function () {
   return Avatars.find();
 });
@@ -29,8 +33,9 @@ Meteor.publish('userAvatar', function () {
   return Avatars.find({owner: this.userId});
 });
 
-
-//POSTS
+/*=============================
+=            POSTS            =
+=============================*/
 Meteor.publish('allPosts', function () {
   return Posts.find();
 });
@@ -43,8 +48,9 @@ Meteor.publish('singlePost', function(id) {
   return Posts.find(id);
 });
 
-
-//COMMENTS
+/*================================
+=            COMMENTS            =
+================================*/
 Meteor.publish('comments', function(postId) {  
   check(postId, String);  
   return Comments.find({postId: postId});

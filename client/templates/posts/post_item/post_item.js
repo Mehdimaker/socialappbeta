@@ -25,14 +25,6 @@ Template.postItem.helpers({
   }
 });
 
-Template.postItem.onRendered(function () {
-  $('.ui.dropdown.postSetting')
-  .dropdown()
-  ; 
-
-});
-
-
 Template.postItem.events({  
   'click .upmember': function() {	
     var userId = Meteor.userId();   
@@ -49,8 +41,5 @@ Template.postItem.events({
     }else{ 
       Meteor.call('upmember', this._id);  
     }
-  },
-  'click .postDelete': function() {   
-    Meteor.call('postDelete', this._id);  
   }
 });

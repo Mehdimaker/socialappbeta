@@ -1,0 +1,90 @@
+template(name='dashboard')
+	//.ui.grid.stackable.centered
+		.ui.statistics
+			.statistic
+				.value
+					| {{CountCurrentPosts}}
+				.label
+					| Next Workout
+			.statistic
+				.value
+					| {{CountClosedPosts}}
+				.label
+					| Passed Workout
+			.statistic
+				.value
+					//i.marker.icon
+					|  {{currentUser.location}}
+				.label
+					| Favorite location
+
+
+	.ui.two.column.doubling.stackable.grid.container.postlist
+		.row
+			.column
+				h3.ui.top.attached.header.inverted.center.aligned
+					|Your next workout
+					.ui.red.circular.right.label
+						|{{CountCurrentPosts}}
+				.ui.tertiary.segment.attached
+					if UserCurrentPosts
+						.ui.divided.items
+							each UserCurrentPosts
+								+postItem
+					else
+						p No workout
+			.column
+				h3.ui.top.attached.header.inverted.center.aligned
+					|Your passed workout
+					.ui.red.circular.label.right.floated
+						|{{CountClosedPosts}}
+				.ui.tertiary.segment.attached
+					if UserClosedPosts
+							.ui.divided.items
+								each UserClosedPosts
+									+postItem
+					else
+						p No workout
+
+		//.six.wide.column
+			.ui.secondary.inverted.segment
+				.ui.header
+					|Your Stats
+				.ui.content
+					|Here are your stats to see your improvement !
+
+		//.six.wide.column
+			.ui.secondary.inverted.segment
+				.ui.header
+					|My Training Partners
+				.ui.content
+			table.ui.very.basic.collapsing.celled.table
+				tbody
+					tr
+						td
+							.content
+								| Training upcoming
+								.sub.header
+									| Human Resources
+						td
+							| 0
+					tr
+						td
+							.content
+								| Training upcoming
+								.sub.header
+									| Human Resources
+						td
+							| 0
+
+	//.ui.grid.stackable.postlist
+		.ten.wide.column
+			.ui.secondary.inverted.segment
+				.ui.header
+					|Your Last Workouts
+				//.content
+					|Here your upcoming workouts, you will be even stronger!
+			.ui.divided.items
+				each posts
+					+postItem
+		

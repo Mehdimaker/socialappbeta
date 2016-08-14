@@ -1,0 +1,67 @@
+template(name='navbar')
+	.ui.top.menu.navbar.fixed
+		.ui.container
+			a(href="{{pathFor 'home'}}")
+				h3.item.borderless
+					|SportAppBeta
+			.right.menu
+				if currentUser
+					a.item.borderless(href="{{pathFor 'postSubmit'}}" class="{{activeRouteClass 'postSubmit'}}")
+						i.plus.icon
+						| START
+					a.item.borderless(href="{{pathFor 'postsList'}}" class="{{activeRouteClass 'postsList'}}")
+						i.search.icon
+						| FIND
+					//a.item.large.borderless(href="{{pathFor 'dashboard'}}" class="{{activeRouteClass 'dashboard'}}")
+						i.grid.dashboard.icon
+						| DASHBOARD
+					.ui.dropdown.item.borderless
+						//| {{currentUser.username }}
+						img.avatar.ui.image(src="{{currentUser.avatarMini}}")
+						//i.dropdown.icon
+						.menu
+							a.item(href="{{pathFor 'dashboard'}}")
+								|Dashboard
+								i.icon.dashboard
+							a.item.profile(href="{{pathFor 'editProfile'}}")
+								|Edit profile
+								i.icon.setting
+							.item.modalsignout
+								|Sign out
+								i.sign.out.icon.red
+				else
+					.ui.item.top.right.borderless
+						a.ui.basic.inverted.button.tiny.modalsignS(data-modal="signin")
+							| Sign In
+						a.ui.basic.inverted.button.tiny.modalsignS(data-modal="signup")
+							| Sign Up
+	//.ui.navbar.menu.navbartwo.fixed.top
+		.ui.container
+			a.item.large(href="{{pathFor 'dashboard'}}" class="{{activeRouteClass 'dashboard'}}")
+				i.grid.dashboard.icon
+				| Dashboard
+			.right.menu
+				a.item(href="{{pathFor 'postSubmit'}}" class="{{activeRouteClass 'postSubmit'}}")
+					i.plus.icon
+					| Create training	
+				a.item(href="{{pathFor 'postsList'}}" class="{{activeRouteClass 'postsList'}}")
+					i.search.icon
+					| Find training
+			//a.item(href="{{pathFor 'mapPosts'}}" class="{{activeRouteClass 'mapPosts'}}")
+				i.grid.marker.icon
+				| Map Posts
+			//a.item(href="{{pathFor 'usersList'}}" class="{{activeRouteClass 'usersList'}}")
+				i.grid.users.icon
+				| Members
+			//a.item(href="{{pathFor 'myPosts'}}" class="{{activeRouteClass 'myPosts'}}")
+				i.grid.bookmark.icon
+				| My Posts
+			//.right.menu
+				.ui.category.search.item
+					.ui.transparent.icon.input(style="border-radius:none")
+						input.prompt(type='text', placeholder='Search training, members...')
+						i.search.link.icon
+					.results
+
+						
+

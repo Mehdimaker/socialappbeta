@@ -1,34 +1,10 @@
-
-
-$basecolor: orange;
-$darkcolor: darken( $basecolor, 20% );
-$lightcolor: lighten( $basecolor, 20% );
-
-
-$color1:#444;
-$color3:#1b1c1d;
-
-
-$white:rgba(255, 255, 255, 1);
-$black:rgba(0, 0, 0, 1);
-$grey: #4c4f52;
-
-$greylabel: #e8e8e8;
-
-$running:#2980b9;
-$football:#27ae60;
-$workout:#16a085;
-$cycle:#8e44ad;
-$boxing:#e74c3c;
-
-$bd-radius:0.28571429rem;
+@import 'variables.scss';
 
 body{
-	padding-top:98px;
-}
-main{
-	width: 100%;				
-	margin:auto;
+	padding-top:58px;
+	//background:url("bg.jpg") fixed no-repeat;
+	//background-size: cover;
+	//background-color:grey;
 }
 .colorOrange{
 	color:$basecolor!important;
@@ -45,267 +21,38 @@ main{
 	background-color:$lightcolor!important;
 	color:$black!important;
 }
-
-.ui.menu.navbarone{
-	margin:0;
-	z-index:999;
-	height:44px;
-	h3{
-		height: 44px;
-		color:$basecolor;
-		padding-left:0px;
-	}
-	.ui.basic.inverted.button.tiny.modalsignS{
-		margin-left:4px;
-	}
-}
-
-.ui.menu.navbartwo{
-	background-color:$basecolor;
-	margin-top:44px;
-	border:none;
-	box-shadow:none;
-	.item.active{
-
-	}
-}
-.bgblack{	 
-	position: absolute;
-	top: 0;
-	left: 0;
-	min-width: 100%;
-	min-height: 100%;
-	z-index: -99;
-		//background-color:rgba(255,255,255,0.4);
-		background-color:rgba(0,0,0,0.75);
-		overflow: hidden;
-	}
-	.bgvideo{
-		position: absolute;
-		top: 0;
-		left: 0;
-		min-width: 100%;
-		min-height: 100%;
-		z-index: -100;
-		background-color:black;
-		overflow: hidden;
-
-		video { 
-			filter:blur(10px);
-			-o-filter:blur(10px);
-			-ms-filter:blur(10px);
-			-moz-filter:blur(10px);
-			-webkit-filter:blur(10px);
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			min-width: 100%;
-			min-height: 100%;
-			width: auto;
-			height: auto;
-			z-index: -100;
-			transform: translateX(-50%) translateY(-50%);
-			transition: 1s opacity;
-			background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
-			background-size: cover;
-		}
-	}
-
-/////////////////////////////////////////////////
-////////////////////   HOME     /////////////////
-/////////////////////////////////////////////////
-section.home{
-	position:relative;
-	height:100vh;
-	width:100%;   
-
-
-	.contentvertical{
-
-		position: relative;	
-		height: 100%;
-		width: 100%;				
-		color:#fff;
-		margin:auto;
-		margin-top:-98px;
-
-		text-align: right;
-		padding:10px;		
-		//background-color:rgba(0,0,0,0.75);
-
-		.bandeau{
-			text-align: center;
-			position: absolute;
-			margin: auto;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			height:300px;		
-			h1{
-				font-size:60px;
-				margin:0;		}
-				p{
-					font-size: 20px;
-					margin-top: 0px;
-					margin-bottom: 25px;
-					font-style: italic;
-				}
-			}
-		}
-	}
-
-	.biglabel{
-		background-color:orange;
-		height:150px;
-		width:100%;
-	}
-
-
-
-
-/////////////////////////////////////////////////
-//////////////////// POST ITEM  /////////////////
-/////////////////////////////////////////////////
-
-.postSetting{
-	color: $color1;
-	float:right;
-}
-.postSetting:hover{
-
-	color: $basecolor;
+.bgtextcolor{
+	background-color:$textcolor!important;
+	color:$white!important;
 }
 
 
 
-
-
-/////////////////////////////////////////////////
-///////////////// EDIT PROFILE  /////////////////
-/////////////////////////////////////////////////
-.editProfile{
-
-	tbody tr td:nth-child(3){
-		cursor:pointer;
-		width:40px;
-	}
-	tbody tr td:nth-child(3):hover .edit.icon{
-		color:$basecolor;
-	}
-	tbody tr td:nth-child(2){
-		color:$basecolor;
-	}
-	.mylabel{
-		background-color:$white!important;
-		position:absolute;
-		color:white;
-		height:35px;
-		width: 35px;
-		top:4px;
-		right:4px;
-		line-height: 30px;
-		cursor: pointer;
-		text-align:center;
-		border-radius: $bd-radius;	
-		i{
-			color:$color1;
-			text-align: right;
-		}	
-	}
-	.mylabel:hover i{
-		color:$basecolor;
-	}
-
-}
-
-/////////////////////////////////////////////////
-////////////////  POST SUBMIT   /////////////////
-/////////////////////////////////////////////////
-
-.ui.form.postSubmit{
-
-	.ui.segment{
-	}
+.field.error {
 	label{
-		font-size: 14px;
-		font-weight: bold;
-		color: $grey;
+		color:#9f3a38!important;
 	}
-	input,textarea,{
-		background-color:transparent;
-		border: 2px solid $grey;
-	}
-	input:focus,textarea:focus{
+	input,textarea{
 		background-color:transparent!important;
+		border:2px solid #9f3a38 !important;
 	}
 	div.ui.fluid.search.selection.dropdown{
-		
-		height: 37px;
-		background-color:transparent!important;
-		div.text{
-
-		}
+		input{
+			border:none!important;
+		}		
+		border:1px solid #9f3a38 !important;
 	}
-	i.icon{
-	}
-	.ui.search.dropdown{
-		height:37px;
-
-		.menu.transition{
-			//border:none;	
-			border:1px solid $white;
-
-			//margin:0;
-			div.item{
-				height:37px;
-				vertical-align:middle;
-				color:$black;
-				background-color:$color1;
-				img{
-					color:$white;
-				}
-			}
-		}
-	}
-	
 }
-.field.error {
-		label{
-			color:#9f3a38!important;
-		}
-		input,textarea{
-			background-color:transparent!important;
-			border:2px solid #9f3a38 !important;
-		}
-		div.ui.fluid.search.selection.dropdown{
-			input{
-				border:none!important;
-			}		
-			border:1px solid #9f3a38 !important;
-		}
-	}
-	div.ui.error.message{
-		box-shadow:none;
-		background-color: #9f3a38;
-		color:$white;
 
-	}
+div.ui.error.message{
+	box-shadow:none;
+	background-color: #9f3a38;
+	color:$white;
+
+}
 //avatar mini
 img.ui.avatar.image{
 	border-radius:$bd-radius;
-}
-
-
-/////////////////////////////////////////////////
-////////////////  POST PAGE   /////////////////
-/////////////////////////////////////////////////
-
-.ui.form.commentSubmit {
-textarea{
-	background-color:$greylabel!important;
-	border:none;
-}
 }
 
 //////////////// BLOCK HEADER
@@ -314,124 +61,12 @@ textarea{
 	border:none;
 }
 .ui.tertiary.segment{
-	
 	border:none;
 	box-shadow:none;
-}
-
-/////////////////// MODALS ///////////////////
-.modal.signout{
-	text-align:center;
-	.actions{
-		text-align: center;
-	}
-}
-.modal.signin, .modal.signup , .modal.forgotpass,.modal.newpass{
-	.menu{
-		margin:0px;
-		font-size: 1.2rem;
-	}
-	.button.submit{
-		margin:25px 0 0 0;
-	}
-	.menuforgotpass{
-		float: right;
-		font-weight: normal;
-		cursor:pointer;
-	}
-}
-
-.ui.modal.basic.tiny.modalUser{
-
-	 img{
-		border-radius:$bd-radius!important;
-	}
-}
-
-// IMAGE SPORT CTG
-.ui.grid.two.columns.stackable{
-	padding-top:0px;
-}
-.sportsctg{
-	img{
-		padding:10px;
-
-	}
-	img.running{background-color:	$running;}
-	img.football{background-color:$football;}
-	img.workout{background-color:	$workout;}
-	img.cycle{background-color:		$cycle;}
-	img.boxing{background-color:	$boxing;}
-
-
-}
-
-.postSubmit {
-	img {
-		height:40px;
-		color:white;
-		padding:5px;
-	}
-
-
-	img.running{background-color: $running;}
-	img.football{background-color:$football;}
-	img.workout{background-color: $workout;}
-	img.cycle{background-color:   $cycle;}
-	img.boxing{background-color:  $boxing;}
-
-}
-/* Tiny Modal Width */
-
-@media only screen and (max-width: 767px) {
-	.ui.tiny.modal {
-		width: 95%;
-		margin: 0em 0em 0em -47.5%;
-	}
-	.modal.signin, .modal.signup, .modal.forgotpass, .modal.newpass, .modal.modalUser{
-		.close.icon{
-			padding: 0;
-			margin: 8px 0 0 0;
-
-		}
-	}
-
-}
-@media only screen and (min-width: 768px) {
-	.ui.tiny.modal {
-		width: 300px;
-		margin: 0em 0em 0em -150px;
-	}
-	.modal.signin, .modal.signup, .modal.forgotpass, .modal.newpass, .modal.modalUser{
-		.close.icon{
-			padding: 0;
-			margin:0 -5px 0 0;
-		}
-	}
-	.ui.image.label.member{
-		img{
-			float:left;
-		}
-		width:100%!important;
-		margin-bottom:5px;
-		text-align:right;
-	}
-}
-@media only screen and (min-width: 992px) {
-	.modal.signin, .modal.signup, .modal.forgotpass, .modal.newpass, .modal.modalUser{
-		.close.icon{
-			padding: 0;
-			margin:10px 10px 0 0;
-		}
-	}
+	//background-color:transparent;
 }
 
 
-//Post Submit
-.calculateChar{
-	float: right;
-	font-weight: normal;
-}
 
 // MAP
 //Animesh Nandi's answer is a bit old. Actually, to remove the 'powered by Google' logo I had to use the following code:
@@ -452,21 +87,33 @@ textarea{
 	border-radius:$bd-radius;
 	z-index: 0;
 }
-.ui.tertiary.segment.map{
 
-	.ui.header{
-		padding:14px;
-		margin:0;
-	}
-padding : 0;
-#mappage {
-	height: 150px;
-	width: 100%;
-	border-bottom-left-radius:$bd-radius;
-	border-bottom-right-radius:$bd-radius;	
-	z-index: 0;
+
+
+/*==============================
+=            MOBILE            =
+==============================*/
+@media only screen and (max-width: 767px) {
+
 }
+/*==============================
+=            TABLET            =
+==============================*/
 
+@media only screen and (min-width: 768px) {
 
+	.ui.image.label.member{
+		img{
+			float:left;
+		}
+		width:100%!important;
+		margin-bottom:5px;
+		text-align:right;
+	}
+}
+/*================================
+=            COMPUTER            =
+================================*/
+@media only screen and (min-width: 992px) {
 
 }

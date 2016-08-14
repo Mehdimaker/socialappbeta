@@ -1,0 +1,57 @@
+@import '../../../stylesheet/variables.scss';
+
+.ui.equal.width.form.postSubmit{
+	.ui.segment.bgtextcolor{
+		border:none;
+		box-shadow:none;
+		.ui.header{
+			color:$white;
+		}
+	}
+
+	label{
+		font-size: 14px;
+		font-weight: bold;
+		color: $textcolor;
+	}
+	input,textarea,{
+		background-color:transparent;
+		border: 2px solid $textcolor;	
+		white-space: pre;
+		color: $darkcolor;
+		font-weight:bold;
+	}
+	input:focus,textarea:focus{
+		background-color:transparent!important;
+	}
+	div.ui.fluid.search.selection.dropdown{
+		
+		height: 37px;
+		background-color:transparent!important;
+		div.text{
+
+		}
+	}
+	i.icon{
+	}
+	.ui.search.dropdown{
+		height:37px;
+
+		.menu.transition{
+			//border:none;	
+			border:1px solid $white;
+
+			//margin:0;
+			div.item{
+				height:37px;
+				vertical-align:middle;
+				color:$textcolor;
+				background-color:$color1;
+				img{
+					color:$white;
+				}
+			}
+		}
+	}
+	
+}

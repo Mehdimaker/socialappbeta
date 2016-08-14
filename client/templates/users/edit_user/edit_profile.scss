@@ -1,0 +1,36 @@
+@import '../../../stylesheet/variables.scss';
+
+.editProfile{
+
+	tbody tr td:nth-child(3){
+		cursor:pointer;
+		width:40px;
+	}
+	tbody tr td:nth-child(3):hover .edit.icon{
+		color:$basecolor;
+	}
+	tbody tr td:nth-child(2){
+		color:$basecolor;
+	}
+	.mylabel{
+		background-color:$white!important;
+		position:absolute;
+		color:white;
+		height:35px;
+		width: 35px;
+		top:4px;
+		right:4px;
+		line-height: 30px;
+		cursor: pointer;
+		text-align:center;
+		border-radius: $bd-radius;	
+		i{
+			color:$color1;
+			text-align: right;
+		}	
+	}
+	.mylabel:hover i{
+		color:$basecolor;
+	}
+
+}

@@ -1,0 +1,17 @@
+template(name='layout')
+	.ui.container
+		+signin
+		+signup
+		+signout
+		+forgotpass
+		if resetPassword
+			+newpass		
+		if routeIsNot 'home'
+			//+sidebar
+			+navbar
+		+yield
+
+		each member in members
+			+modalUser(member=member)
+
+

@@ -1,0 +1,26 @@
+@import '../../../stylesheet/variables.scss';
+
+.item.postItem{
+	.extra{
+		position:relative;
+		width:100%;
+		a.ui.icon.right.floated.gotopage{
+			position: absolute!important;
+			right:0!important;
+			bottom:0!important;
+			i{
+				width:30px;
+			}
+		}
+	}
+	a.header,a.ui.icon.right.gotopage,h1.header{
+		color:$textcolor!important;
+	}
+	
+	a.header:hover, a.ui.icon.right.gotopage:hover {
+		color: $basecolor!important;
+
+	}
+	
+
+}

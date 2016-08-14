@@ -1,0 +1,40 @@
+@import 'variables.scss';
+
+.calendar{
+	box-shadow:none;
+	
+	table{
+		border-radius:$bd-radius!important;
+		background-color:$textcolor!important;
+		border:none!important;
+		overflow: hidden!important;
+		th{
+			background-color:$textcolor!important;
+			color:$white!important;
+			border-bottom-color:rgba(255, 255, 255, 0.23);
+		}
+	}
+	td{
+		border:none!important;
+		color:$white!important;
+		box-shadow:none!important;
+	}
+	td.link.disabled{
+		opacity: 0.1;
+	}
+
+	td.focus,td:hover ,td.link.today:hover{
+		border: none!important;
+		background-color: $darkcolor!important;
+		color: $white!important;
+
+	}
+	td.link.today{
+		color:$basecolor!important;
+	}
+	td.link.active{
+		background-color:$basecolor!important;
+		color:$white!important;
+
+	}
+}
