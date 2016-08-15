@@ -1,4 +1,5 @@
-.meteor
 .DS_Store
 private/
-.setting.json
+node_modules/
+.settings.json
+
