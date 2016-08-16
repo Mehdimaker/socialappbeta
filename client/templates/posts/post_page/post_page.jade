@@ -22,7 +22,7 @@ template(name="postPage")
 								.content
 									| Hour
 									.sub.header {{displayHour startPost}}
-				.ui.tertiary.segment		
+				.ui.tertiary.segment
 					h5.ui.header
 						i.marker.icon
 						.content
@@ -166,9 +166,9 @@ template(name="postPage")
 						i.users.icon
 						.content
 							| Members
-							//.sub.header {{pluralize membersCount "member"}} 
+							//.sub.header {{pluralize membersCount "member"}}
 					each member in members
-						+labelUser(id=member etat="member") 
+						+labelUser(id=member etat="member")
 
 
 
