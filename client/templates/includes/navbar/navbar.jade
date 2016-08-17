@@ -8,10 +8,10 @@ template(name='navbar')
 				if currentUser
 					a.item.borderless(href="{{pathFor 'postSubmit'}}" class="{{activeRouteClass 'postSubmit'}}")
 						i.plus.icon
-						| START
+						p START
 					a.item.borderless(href="{{pathFor 'postsList'}}" class="{{activeRouteClass 'postsList'}}")
 						i.search.icon
-						| FIND
+						p FIND
 					//a.item.large.borderless(href="{{pathFor 'dashboard'}}" class="{{activeRouteClass 'dashboard'}}")
 						i.grid.dashboard.icon
 						| DASHBOARD

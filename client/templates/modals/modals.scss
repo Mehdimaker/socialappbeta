@@ -24,7 +24,8 @@
 	}
 }
 
-.ui.modal.basic.tiny.modalUser{
+.ui.tiny.modal.basic.modalUser{
+	width:auto!important;
 	img{
 		border-radius:$bd-radius!important;
 	}
@@ -38,6 +39,14 @@
 	.ui.tiny.modal {
 		width: 95%;
 		margin: 0em 0em 0em -47.5%;
+	}
+	.ui.tiny.modal.basic.modalUser{
+		width:95%!important;
+		text-align:center;
+		img{
+			width:100%!important;		
+			max-width:300px;
+		}
 	}
 	.modal.signin, .modal.signup, .modal.forgotpass, .modal.newpass, .modal.modalUser{
 		.close.icon{

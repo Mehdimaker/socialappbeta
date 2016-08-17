@@ -4,7 +4,6 @@ template(name='home')
 		video(id="myVideo" autoplay loop muted poster="")
 			source(src="test.mp4" type="video/mp4")
 	section.home
-
 		.contentvertical
 			if currentUser
 				.ui.inverted.button.tiny.basic.dropdown.item
@@ -32,7 +31,7 @@ template(name='home')
 					a.ui.orange.button.huge(href="{{pathFor 'dashboard'}}")
 						| Join the comunity !
 				else
-					a.ui.orange.button.huge.modalsignS(data-modal="signin")
+					a.ui.orange.button.large.modalsignS(data-modal="signin")
 						| Join the comunity !
 		
 

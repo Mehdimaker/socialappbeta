@@ -49,7 +49,7 @@ template(name="postItem")
 						.ui.label 
 							i.icon.users
 							|{{membersCount}}
-						.ui.label 
+						.ui.label.comments 
 							i.icon.comments
 							|{{commentsCount}}
 						a.ui.icon.right.floated.gotopage(href="{{pathFor 'postPage'}}")
@@ -72,7 +72,7 @@ template(name="postItem")
 						.ui.label 
 							i.icon.users
 							|{{membersCount}}
-						.ui.label 
+						.ui.label.comments
 							i.icon.comments
 							|{{commentsCount}}
 						a.ui.icon.right.floated.gotopage(href="{{pathFor 'postPage'}}")

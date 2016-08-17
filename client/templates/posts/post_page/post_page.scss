@@ -36,28 +36,50 @@
 		width:80px!important;
 		img{
 			padding:0!important;
-						margin:0!important;
-
-					height:80px!important;
-					width:80px!important;
+			margin:0!important;
+			height:80px!important;
+			width:80px!important;
 		}
 	}
 }
-@media only screen and (max-width: 767px) {
 
+
+
+
+
+/*==============================
+=            MOBILE            =
+==============================*/
+@media only screen and (max-width: 767px) {
 	.postPage{
 		.item.postItem{
-
 			.content{
+				top:14px;
 				left:-14px;
 				position:absolute;
 				padding-left:122px!important;
 				padding-top:0!important;
 				width:100%!important;
 				.extra{
+					position:absolute;
+					top:54px;
+					right:0;
 				}
 			}
 		}
 	}
+}
+
+/*==============================
+=            TABLET            =
+==============================*/
+@media only screen and (min-width: 768px) {
+
+}
+
+/*================================
+=            COMPUTER            =
+================================*/
+@media only screen and (min-width: 992px) {
 
 }

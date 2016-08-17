@@ -53,15 +53,31 @@
 
 	}
 }
-
+/*==============================
+=            MOBILE            =
+==============================*/
 @media only screen and (max-width: 767px) {
-
 	.ui.top.menu.navbar.fixed{
 
 		.right.menu{
-
+			p{
+				display: none;
+			}
 		}
 
 	}
+}
+/*==============================
+=            TABLET            =
+==============================*/
+
+@media only screen and (min-width: 768px) {
 
 }
+/*================================
+=            COMPUTER            =
+================================*/
+@media only screen and (min-width: 992px) {
+
+}
+
