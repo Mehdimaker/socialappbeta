@@ -28,8 +28,10 @@ Template.postEdit.onRendered(function () {
     };
     // METHOD
     Meteor.call('postEdit',postId, post, function(error, result) {  
-      if (result)
-        Router.go('postPage', {_id: result._id});        
+      if (result)        
+        sAlert.error('Login failed!');
+        Router.go('postPage', {_id: result._id}); 
+
     });   
     // VALIDATIONS ERRORS
   },
@@ -42,8 +44,12 @@ Template.postEdit.onRendered(function () {
         prompt : 'Please enter a title'
       },
       {
-        type   : 'minLength[6]',
+        type   : 'minLength[10]',
         prompt : 'Your title must be at least {ruleValue} characters'
+      },
+      {
+        type   : 'maxLength[70]',
+        prompt : 'Your title must be at max {ruleValue} characters'
       }
       ]
     } ,   

@@ -6,6 +6,22 @@ body{
 	//background-size: cover;
 	//background-color:grey;
 }
+.ui.grid{
+	padding-top:10px!important;
+}
+
+.s-alert-box{
+	z-index: 2000;
+	border-radius:$bd-radius;
+	color:$white;
+	margin-left:14px;
+	right:14px;
+	top:54px;
+}
+.s-alert-success{
+	background-color:$green;
+}
+
 .colorOrange{
 	color:$basecolor!important;
 }
@@ -27,7 +43,9 @@ body{
 }
 
 
-
+/*============================
+=            FORM            =
+============================*/
 .field.error {
 	label{
 		color:#9f3a38!important;
@@ -43,24 +61,29 @@ body{
 		border:1px solid #9f3a38 !important;
 	}
 }
-
 div.ui.error.message{
 	box-shadow:none;
 	background-color: #9f3a38;
 	color:$white;
-
 }
+
+
+
+/*==============================
+=            AVATAR            =
+==============================*/
 //avatar mini
 img.ui.avatar.image{
 	border-radius:$bd-radius;
 }
 
-//////////////// BLOCK HEADER
-
+/*====================================
+=            BLOCK HEADER            =
+====================================*/
 .ui.block.header{
 	border:none;
 }
-.ui.tertiary.segment{
+.ui.tertiary.segment,{
 	border:none;
 	box-shadow:none;
 	//background-color:transparent;
@@ -68,7 +91,9 @@ img.ui.avatar.image{
 
 
 
-// MAP
+/*===========================
+=            MAP            =
+===========================*/
 //Animesh Nandi's answer is a bit old. Actually, to remove the 'powered by Google' logo I had to use the following code:
 .leaflet-popup-content-wrapper, .leaflet-popup-tip{
 	border-radius:0.28571429rem!important;

@@ -5,11 +5,6 @@
 	h5.ui.header,h4.ui.header{
 		color:$textcolor!important;
 	}
-	#mappage{
-		a {
-			color: grey!important;
-		}
-	}
 	.ui.form.commentSubmit {
 		textarea{
 			background-color:$greylabel!important;
@@ -17,20 +12,49 @@
 			white-space: pre;
 		}
 	}
+
+
 	.ui.tertiary.segment.map{
 		padding : 0;
+		p.address{
+			padding:0 14px 0 14px;
+			font-size: 1rem;	
+		}
 		.ui.header{
 			padding:14px;
 			margin:0;
 		}
-		#mappage {
+		#mappage1 ,#mappage2 ,#mappage3 {
 			height: 150px;
 			width: 100%;
 			border-bottom-left-radius:$bd-radius;
 			border-bottom-right-radius:$bd-radius;	
 			z-index: 0;
+			a {
+			color: grey!important;
+			}
 		}
 	}
+.ui.tertiary.segment.attached{
+	border-top-right-radius:$bd-radius;
+	border-top-left-radius:$bd-radius;
+}
+.ui.bottom.attached.message{
+	box-shadow:none!important;
+	padding:8px 14px 8px 14px;
+	background-color: $greylabel!important;
+	a{
+		color:$textcolor;
+		font-style: italic;
+		cursor:pointer;
+		i{
+		float:right;
+	}
+	}
+
+}
+
+
 	.ui.tiny.image.profileMember{
 		margin:0;
 		width:80px!important;

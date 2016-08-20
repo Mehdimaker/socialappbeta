@@ -29,7 +29,7 @@ Template.registerHelper('authorFindAvatarMega', function(authorId) {
 
 
 Template.registerHelper('displayDay', function(date) {
-    return moment(date).format("DD/MM/YYYY");
+    return moment(date).format("dddd, D MMMM");
 });
 
 Template.registerHelper('displayHour', function(date) {

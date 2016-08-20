@@ -11,6 +11,8 @@ template(name='layout')
 			+navbar
 		+yield
 
+		+sAlert
+
 		each member in members
 			+modalUser(member=member)
 

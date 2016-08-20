@@ -4,7 +4,7 @@
 	.extra{
 		position:relative;
 		width:100%;
-		a.ui.icon.right.floated.gotopage{
+		a.gotopage{
 			position: absolute!important;
 			right:0!important;
 			bottom:0!important;
@@ -13,15 +13,14 @@
 			}
 		}
 	}
-	a.header,a.ui.icon.right.gotopage,h1.header{
+	a.header,a.gotopage,h1.header{
 		color:$textcolor!important;
 	}
 	
-	a.header:hover, a.ui.icon.right.gotopage:hover {
+	a.header:hover, a.gotopage:hover{
 		color: $basecolor!important;
 
 	}
-	
 
 }
 
@@ -42,7 +41,7 @@
 			font-size: 0.9em!important;
 		}
 		.extra{
-			.ui.label.comments{
+			.ui.label.comm{
 				display: none;
 			}
 		}

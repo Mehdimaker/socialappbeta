@@ -81,7 +81,7 @@ template(name='editProfile')
 					//label Username
 					input#editprofile-username(name="username" type='text' value="{{currentUser.username}}")
 				.ui.blue.button.submit.fluid
-					| Edit  
+					| Save  
 
 	.ui.modal.tiny.editlocation
 		i.close.icon
@@ -93,7 +93,7 @@ template(name='editProfile')
 					//label Location
 					input#editprofile-location(name="bio" type='text' value="{{currentUser.location}}")
 				.ui.blue.button.submit.fluid
-					| Edit  
+					| Save  
 
 	.ui.modal.tiny.editbio
 		i.close.icon
@@ -106,4 +106,4 @@ template(name='editProfile')
 					textarea#editprofile-bio(name="bio" type='text' rows="3")
 						|{{currentUser.bio}}
 				.ui.blue.button.submit.fluid
-					| Edit  
+					| Save  

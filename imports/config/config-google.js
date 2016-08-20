@@ -1,4 +1,4 @@
 GoogleMaps.load({ 
   v: '3', 
-  key: Meteor.settings.public.googleapp, 
+  key: "AIzaSyAmA6ZKbp6ScWvbsX_PYPKKR3SxzEiWcOU", 
   libraries: 'geometry,places' });

@@ -45,6 +45,10 @@ Template.postSubmit.onRendered(function () {
       {
         type   : 'minLength[6]',
         prompt : 'Your title must be at least {ruleValue} characters'
+      },
+      {
+        type   : 'maxLength[70]',
+        prompt : 'Your title must be at max {ruleValue} characters'
       }
       ]
     },   

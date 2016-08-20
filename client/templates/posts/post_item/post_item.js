@@ -39,7 +39,9 @@ Template.postItem.events({
 
       alert("vous devez vous connecter pour rejoindre cette entrainement");
     }else{ 
-      Meteor.call('upmember', this._id);  
+      Meteor.call('upmember', this._id); 
+      sAlert.success(`Congratulation your are join ${this.title} !`);
+ 
     }
   }
 });

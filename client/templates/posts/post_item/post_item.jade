@@ -28,6 +28,11 @@ template(name="postItem")
 								|Joined
 								.detail
 									i.icon.checkmark.floated.right
+							.ui.flowing.popup.top.left.transition.hidden
+								p
+									b 2
+									|  projects, $10 a month
+								.ui.button Choose
 						else
 							a.upmember.ui.right.floated.label.red
 								|Join
@@ -42,17 +47,18 @@ template(name="postItem")
 					.meta
 						i.icon.calendar
 						|{{displayDay startPost}} at {{displayHour startPost}}
+					.meta
 						i.icon.marker
-						| {{city}}
+						| {{address}}
 					.extra
 						+labelUser(id=authorId etat="host")
 						.ui.label 
 							i.icon.users
 							|{{membersCount}}
-						.ui.label.comments 
+						.ui.label.comm
 							i.icon.comments
 							|{{commentsCount}}
-						a.ui.icon.right.floated.gotopage(href="{{pathFor 'postPage'}}")
+						a.gotopage(href="{{pathFor 'postPage'}}")
 							i.angle.right.icon.huge(style="margin:0")
 						//.ui.right.floated.label.darkcolor
 							|FINISH
@@ -65,17 +71,18 @@ template(name="postItem")
 					.meta
 						i.icon.calendar
 						|{{displayDay startPost}} at {{displayHour startPost}}
+					.meta
 						i.icon.marker
-						| {{city}}
+						| {{address}}
 					.extra
 						+labelUser(id=authorId etat="host")
 						.ui.label 
 							i.icon.users
 							|{{membersCount}}
-						.ui.label.comments
+						.ui.label.comm
 							i.icon.comments
 							|{{commentsCount}}
-						a.ui.icon.right.floated.gotopage(href="{{pathFor 'postPage'}}")
+						a.gotopage(href="{{pathFor 'postPage'}}")
 							i.angle.right.icon.huge(style="margin:0")
 						//if myPost
 							a.ui.right.floated.grey.label(href="{{pathFor 'postEdit'}}")

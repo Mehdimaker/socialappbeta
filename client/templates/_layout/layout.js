@@ -1,3 +1,5 @@
+import '/imports/config/config-salert.js';
+
 if (Accounts._resetPasswordToken) {
     Session.set('resetPassword', Accounts._resetPasswordToken);
 } 
@@ -37,20 +39,24 @@ Template.layout.events({
 
 
   'click .modalsignS': function(event) {
+    //remove value input and errors msg
+    $('.ui.form').form('clear');
     //show modal
     if($(event.target).data("modal") == "signin"){
       $('.modal.signin').modal('show');
     }else if ($(event.target).data("modal") == "signup"){
       $('.modal.signup').modal('show');
     }
-    //remove value input
-    $('.ui.form').form('clear');
+    
     //initialize the couple of modal
     $('.coupled.modal').modal({allowMultiple: false});
     $('.modal.signup').modal('attach events', '.modal.signin .menusignup');
     $('.modal.signin').modal('attach events', '.modal.signup .menusignin');
     $('.modal.forgotpass').modal('attach events', '.modal.signin .menuforgotpass');
-    //form signin
+
+/*===================================
+=            FORM SIGNIN            =
+===================================*/
     $('.ui.form.signin').form({
       onSuccess : function(){
         var email = $('#signin-email').val();
@@ -58,10 +64,12 @@ Template.layout.events({
         Meteor.loginWithPassword(email, password, function(err){
           if (err) {
             console.log('login failed');
+            sAlert.error('Login failed!');
             return;
           } else {
             console.log('login success');
             $('.modal.signin').modal('hide');
+            Router.go('/dashboard');
           }
         }); 
       },
@@ -72,10 +80,6 @@ Template.layout.events({
             {
               type   : 'empty',
               prompt : 'Please enter a password'
-            },
-            {
-              type   : 'minLength[6]',
-              prompt : 'Your password must be at least {ruleValue} characters'
             }
           ]
         },
@@ -96,12 +100,15 @@ Template.layout.events({
     });
 
     
-    //form signup
+/*===================================
+=            FORM SIGNUP            =
+===================================*/  
     $('.ui.form.signup').form({
       onSuccess : function(){
         var email = $('#signup-email').val();
         var password = $('#signup-password').val();
         var username = $('#signup-username').val();
+
         Accounts.createUser({ 
             username: username, 
             email: email, 
@@ -147,8 +154,8 @@ Template.layout.events({
               prompt : 'Your username must be at max {ruleValue} characters'
             },
             {
-              type:'regExp[/^[a-z0-9_-]{5,16}$/gi]',
-              prompt: 'Your username is not correct, please dont use special characters and no space.'
+              type   : 'regExp[/^[a-z0-9_-]{5,16}$/gi]',
+              prompt : 'Your username is not correct, please dont use special characters and no space.'
             }
           ]
         },
@@ -180,7 +187,10 @@ Template.layout.events({
         }
       }
     });
-    //form forgotpass
+
+/*=======================================
+=            FORM FORGOTPASS            =
+=======================================*/
     $('.ui.form.forgotpass').form({
       onSuccess : function(){
         var email = $('#forgotpass-email').val();
