@@ -3,7 +3,9 @@ template(name='navbar')
 		.ui.container
 			a(href="{{pathFor 'home'}}")
 				h3.item.borderless
-					|SportAppBeta
+					|WILLTEAM 
+					// {{_ "hello"}}
+					//.ui.black.label 0.2
 			.right.menu
 				if currentUser
 					a.item.borderless(href="{{pathFor 'postSubmit'}}" class="{{activeRouteClass 'postSubmit'}}")

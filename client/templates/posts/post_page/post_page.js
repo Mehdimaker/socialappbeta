@@ -44,7 +44,8 @@ Template.postPage.events({
        return ;
      },
      onApprove : ()=> {
-        Meteor.call('downmember', this._id); 
+      Meteor.call('downmember', this._id); 
+      sAlert.warning(`You left training: ${this.title} !`);
 
         //Router.go('/dashboard');
      }
@@ -58,7 +59,28 @@ Template.postPage.helpers({
   comments: function() {    
     return Comments.find({postId: this._id});  
   },
-  
+  upmemberClass: function() {    
+    var userId = Meteor.userId();   
+    if (userId && _.include(this.members, userId)) {      
+    return true;    
+    }
+    else {      
+     return false;    
+    }  
+  },
+  myPost: function() {    
+    var userId = Meteor.userId();    
+    if (userId == this.authorId) {      
+      return true;    
+    }
+    else {      
+      return false;    
+    }  
+  },
+  finish: function(){
+    var today = new Date();
+    return this.startPost <= today ? true : false;
+  }
   // comments: function() {    
   //  return Meteor.users.find({postId: this._id});  
   //}

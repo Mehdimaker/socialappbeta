@@ -1,7 +1,6 @@
 Template.commentSubmit.onRendered(function () {
 postId= this.data._id;
   $('.ui.form.commentSubmit').form({
-    inline:true,
     onSuccess : function(e){
     e.preventDefault();
     var $body = $(e.target).find('[name=body]');

@@ -1,4 +1,7 @@
 template(name='notFound')
-	div
-		h2 404
-		p Désolé, nous ne pouvons pas trouver une page à cette adresse.
+	.masthead.error.segment
+		.container
+			h1.ui.dividing.header
+				|404 - Not found
+			p That happens not to be a page -
+				a(href="/") Redirect to home page

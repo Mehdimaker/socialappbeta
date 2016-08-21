@@ -1,4 +1,4 @@
-@import '../../../stylesheet/variables.scss';
+@import '../../stylesheet/variables.scss';
 
 
 .bgHomeBlack{	 
@@ -43,45 +43,63 @@
 	}
 }
 
-section.home{
+
+.bandeau2{
+	height:44px;
+	line-height: 44px;
+	padding:10px;	
+	width:100%;
+	margin-top:-68px!important;
+	padding:0 14px 0 0;
 	position:relative;
-	height:100vh;
-	width:100%;   
-
-
-	.contentvertical{
-
-		position: relative;	
-		height: 100%;
-		width: 100%;				
-		color:#fff;
-		margin:auto;
-		margin-top:-58px;
-
-		text-align: right;
-		padding:10px;		
-		//background-color:rgba(0,0,0,0.75);
-
-		.bandeau{
-			text-align: center;
-			position: absolute;
-			margin: auto;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			height:300px;		
-			h1{
-				font-size:60px;
-				margin:0;		}
-				p{
-					font-size: 20px;
-					margin-top: 0px;
-					margin-bottom: 25px;
-					font-style: italic;
+	z-index:1;
+	.dropdown{
+		float:right;
+		color:$white;
+		img{margin-left:10px;}
+		.menu{
+			right:0px!important;
+			left:auto!important;
+			text-align:right;
+			.item{
+				position:relative;
+				padding-right:37px!important;
+				i{
+					position: absolute;
+					right:0;
 				}
 			}
 		}
+	}
+	
+
+
+}
+
+
+
+.bandeau{
+	color:$white;
+	text-align:center;
+	height:100vh;
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	margin:auto;
+	z-index:0;
+
+	h1{
+		font-size:60px;
+		margin:0;		}
+		p{
+			font-size: 20px;
+			margin-top: 0px;
+			margin-bottom: 25px;
+			font-style: italic;
+		}
+
+
 	}
 
 	.biglabel{
@@ -96,14 +114,12 @@ section.home{
 	.bgHomeVideo{
 		display:none;
 	}
-	section.home{
-		.contentvertical{
-			.bandeau{
-				h1{
-					font-size:45px;
-				}
-			}
+
+	.bandeau{
+		h1{
+			font-size:45px;
 		}
+
 	}
 }
 /*==============================

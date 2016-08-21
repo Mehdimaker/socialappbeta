@@ -1,19 +1,21 @@
 template(name='layout')
-	.ui.container
+	if routeIsNot 'home'
+		+navbar
+	.ui.container.global
 		+signin
 		+signup
 		+signout
 		+forgotpass
 		if resetPassword
 			+newpass		
-		if routeIsNot 'home'
-			//+sidebar
-			+navbar
+		
 		+yield
 
 		+sAlert
 
 		each member in members
 			+modalUser(member=member)
+	if routeIsNot 'home'
+		+footer
 
 

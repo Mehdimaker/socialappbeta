@@ -18,4 +18,14 @@ Template.home.rendered = function() {
   // create sidebar and attach to menu open
   $('.ui.sidebar').sidebar('attach events', '.toc.item');
 
+
+
 }
+
+
+Template.home.events({
+  'mouseenter .dropdown': function() {
+    $('.dropdown').dropdown({
+    });
+  }
+});

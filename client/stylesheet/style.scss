@@ -1,15 +1,40 @@
 @import 'variables.scss';
 
 body{
-	padding-top:58px;
+	min-height:100vh;
 	//background:url("bg.jpg") fixed no-repeat;
 	//background-size: cover;
 	//background-color:grey;
 }
+.ui.container.global{
+	padding:68px 0 68px 0;
+	min-height:100%!important;
+}
 .ui.grid{
-	padding-top:10px!important;
+	padding-top:0px!important;
 }
 
+footer{
+	height:44px;
+	margin-top:-44px!important;
+	background-color:$textcolor!important;
+	color:$white;
+	span{
+		opacity: 0.3;
+	}
+	.language{
+		float:right;
+		a{	
+			color:$white;
+			opacity: 0.3;
+			cursor:pointer;
+		}
+		a.active{
+			opacity: 1;
+			color:$white;
+		}
+	}
+}
 .s-alert-box{
 	z-index: 2000;
 	border-radius:$bd-radius;
@@ -40,6 +65,13 @@ body{
 .bgtextcolor{
 	background-color:$textcolor!important;
 	color:$white!important;
+}
+/*===============================
+=            LOADING            =
+===============================*/
+.loadingTemplate{
+	height:100vh;
+	margin-top:-68px!important;
 }
 
 

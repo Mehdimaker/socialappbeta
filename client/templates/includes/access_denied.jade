@@ -1,3 +1,8 @@
 template(name="accessDenied")
-  h2 Accès refusé
-  p Vous ne pouvez pas accéder à cette page ! Veuillez vous connecter.
+	.masthead.error.segment
+		.container
+			h1.ui.dividing.header
+				|Access denied
+			p You are not allow to see this page -
+				a(href="/") Redirect to home page
+	

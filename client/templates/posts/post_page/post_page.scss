@@ -34,6 +34,9 @@
 			color: grey!important;
 			}
 		}
+		#mappage1{
+			height:100px!important;
+		}
 	}
 .ui.tertiary.segment.attached{
 	border-top-right-radius:$bd-radius;
@@ -90,6 +93,9 @@
 					right:0;
 				}
 			}
+		}
+		a.ui.image.label.profileMember{
+			margin: 0 7px 7px 0;
 		}
 	}
 }

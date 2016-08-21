@@ -55,9 +55,12 @@ template(name="postPage")
 							//.sub.header {{pluralize membersCount "member"}} 
 					each member in members
 						+labelUser(id=member etat="member") 
-				.ui.bottom.attached.message(style="border:none")
-					a.modalLeave Leave this training
-						i.sign.out.icon.floated.right
+				unless myPost
+					unless finish 
+						if upmemberClass
+							.ui.bottom.attached.message(style="border:none")
+								a.modalLeave Leave this training
+									i.sign.out.icon.floated.right
 
 
 
@@ -75,7 +78,7 @@ template(name="postPage")
 						i.list.icon
 						.content
 							| Description
-					.content
+					.content(style="white-space: pre")
 						|{{description}}
 				.ui.tertiary.segment
 					h4.ui.header(style="padding-bottom:0")
@@ -116,9 +119,12 @@ template(name="postPage")
 							//.sub.header {{pluralize membersCount "member"}} 
 					each member in members
 						+labelUser(id=member etat="member") 
-				.ui.bottom.attached.message(style="border:none")
-					a.modalLeave Leave this training
-						i.sign.out.icon.floated.right
+				unless myPost
+					unless finish 
+						if upmemberClass
+							.ui.bottom.attached.message(style="border:none")
+								a.modalLeave Leave this training
+									i.sign.out.icon.floated.right
 
 
 		// COMPUTER
@@ -132,7 +138,7 @@ template(name="postPage")
 						i.list.icon
 						.content
 							| Description
-					.content
+					.content(style="white-space: pre")
 						|{{description}}
 				.ui.tertiary.segment
 					h4.ui.header(style="padding-bottom:0")
@@ -173,9 +179,12 @@ template(name="postPage")
 							//.sub.header {{pluralize membersCount "member"}}
 					each member in members
 						+labelUser(id=member etat="member")
-				.ui.bottom.attached.message(style="border:none")
-					a.modalLeave Leave this training
-						i.sign.out.icon.floated.right
+				unless myPost
+					unless finish 
+						if upmemberClass
+							.ui.bottom.attached.message(style="border:none")
+								a.modalLeave Leave this training
+									i.sign.out.icon.floated.right
 
 	+modalLeave
 

@@ -2,13 +2,13 @@
 
 Template.postItem.helpers({  
 	upmemberClass: function() {    
-   var userId = Meteor.userId();   
-   if (userId && _.include(this.members, userId)) {      
-    return true;    
-  }
-  else {      
-   return false;    
-  }  
+    var userId = Meteor.userId();   
+    if (userId && _.include(this.members, userId)) {      
+      return true;    
+    }
+    else {      
+      return false;    
+    }  
 },
   myPost: function() {    
     var userId = Meteor.userId();    

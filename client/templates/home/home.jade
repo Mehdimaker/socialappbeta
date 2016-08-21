@@ -1,0 +1,44 @@
+template(name='home')
+	.bgHomeBlack
+	.bgHomeVideo
+		video(id="myVideo" autoplay loop muted poster="")
+			source(src="test.mp4" type="video/mp4")
+	.bandeau2
+		if currentUser
+			.ui.dropdown
+				| {{currentUser.username }}
+				img.avatar.ui.image(src="{{currentUser.avatarMini}}")
+				//i.dropdown.icon
+				.menu
+					a.item(href="{{pathFor 'dashboard'}}")
+						|Dashboard
+						i.icon.dashboard
+					a.item.profile(href="{{pathFor 'editProfile'}}")
+						|Settings
+						i.icon.setting
+					.item.modalsignout
+						|Sign out
+						i.sign.out.icon.red
+		else
+			a.ui.basic.inverted.button.tiny.modalsignS(data-modal="signin")
+				| Sign In
+			a.ui.basic.inverted.button.tiny.modalsignS(data-modal="signup")
+				| Sign Up
+	
+
+	.bandeau.ui.middle.aligned.column.centered.grid
+		.column 	
+			h1 WILLTEAM
+				//.ui.label 0.2
+			p find your sport team and get more will !
+			if currentUser
+				a.ui.orange.button.large(href="{{pathFor 'dashboard'}}")
+					| Join the comunity !
+			else
+				a.ui.orange.button.large.modalsignS(data-modal="signin")
+					| Join the comunity !
+
+
+
+
+

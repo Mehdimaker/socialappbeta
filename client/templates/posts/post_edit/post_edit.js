@@ -24,7 +24,7 @@ Template.postEdit.onRendered(function () {
       startPost: new Date(date+" "+hour),            
       address: address,
       city: city,            
-      type: /*$(e.target).find('[name=type]').val()*/"no type",            
+      hashtags: [],            
     };
     // METHOD
     Meteor.call('postEdit',postId, post, function(error, result) {  

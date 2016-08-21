@@ -22,11 +22,12 @@ Template.postSubmit.onRendered(function () {
       startPost: new Date(date+" "+hour), 
       address: address,
       city: city,            
-      type: "no type",            
+      hashtags: [],            
     };
     // METHOD
     Meteor.call('postInsert', post, function(error, result) {  
       if (result){
+        Session.set("sAlert-isCreate", true);
         Router.go('postPage', {_id: result._id});        
       }else{
 
@@ -43,7 +44,7 @@ Template.postSubmit.onRendered(function () {
         prompt : 'Please enter a title'
       },
       {
-        type   : 'minLength[6]',
+        type   : 'minLength[10]',
         prompt : 'Your title must be at least {ruleValue} characters'
       },
       {

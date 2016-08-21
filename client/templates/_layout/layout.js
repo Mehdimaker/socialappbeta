@@ -69,6 +69,7 @@ Template.layout.events({
           } else {
             console.log('login success');
             $('.modal.signin').modal('hide');
+            Session.set("sAlert-signIn", true);
             Router.go('/dashboard');
           }
         }); 
@@ -118,8 +119,13 @@ Template.layout.events({
             console.log('creation failed');
             return false;
           } else {
-            console.log('creation success');
             $('.modal.signup').modal('hide');
+
+            console.log('creation success');
+            Session.set("sAlert-signUp", true);
+            Router.go('/dashboard');
+
+
 
             updateUser= {
               avatarMini : "/user_icon_30.png",
