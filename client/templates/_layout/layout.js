@@ -59,15 +59,19 @@ Template.layout.events({
 ===================================*/
     $('.ui.form.signin').form({
       onSuccess : function(){
+        $(".signin .ui.button.submit").addClass("loading");
+
         var email = $('#signin-email').val();
         var password = $('#signin-password').val();
         Meteor.loginWithPassword(email, password, function(err){
           if (err) {
             console.log('login failed');
             sAlert.error('Login failed!');
+            $(".signin .ui.button.submit").removeClass("loading");
             return;
           } else {
             console.log('login success');
+            $(".signin .ui.button.submit").removeClass("loading");
             $('.modal.signin').modal('hide');
             Session.set("sAlert-signIn", true);
             Router.go('/dashboard');
@@ -106,6 +110,8 @@ Template.layout.events({
 ===================================*/  
     $('.ui.form.signup').form({
       onSuccess : function(){
+        $(".signup .ui.button.submit").addClass("loading");
+
         var email = $('#signup-email').val();
         var password = $('#signup-password').val();
         var username = $('#signup-username').val();
@@ -116,11 +122,12 @@ Template.layout.events({
             password : password   
         }, function(err){
           if (err) {
+            $(".signup .ui.button.submit").removeClass("loading");
             console.log('creation failed');
             return false;
           } else {
             $('.modal.signup').modal('hide');
-
+            $(".signup .ui.button.submit").removeClass("loading");
             console.log('creation success');
             Session.set("sAlert-signUp", true);
             Router.go('/dashboard');

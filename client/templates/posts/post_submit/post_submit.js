@@ -9,7 +9,7 @@ Template.postSubmit.onRendered(function () {
     onSuccess : function(e){
       e.preventDefault();
     // ADD LOADING
-    $(".ui.button.submit").addClass("loading");
+    $(".ui.equal.width.form.postSubmit.error .ui.button.submit").addClass("loading");
     // VARIABLES
     var address = $(e.target).find('[name=address]').val();
     var addressArray=  address.split(/[,,]/);
