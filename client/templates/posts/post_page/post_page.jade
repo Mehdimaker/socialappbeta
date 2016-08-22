@@ -44,7 +44,9 @@ template(name="postPage")
 					.content
 						.ui.comments.threaded
 							each comments
-								+commentItem
+									+commentItem
+							unless commentsCount
+								| no comments
 						if currentUser
 							+commentSubmit
 				.ui.tertiary.segment.attached
@@ -89,6 +91,8 @@ template(name="postPage")
 						.ui.comments.threaded
 							each comments
 								+commentItem
+							unless commentsCount
+								| no comments
 						if currentUser
 							+commentSubmit
 
@@ -149,6 +153,10 @@ template(name="postPage")
 						.ui.comments.threaded
 							each comments
 								+commentItem
+							unless commentsCount
+								| no comments
+							unless currentUser
+								| sign in to send the first.
 						if currentUser
 							+commentSubmit
 

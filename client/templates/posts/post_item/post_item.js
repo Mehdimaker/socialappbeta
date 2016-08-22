@@ -34,10 +34,10 @@ Template.postItem.events({
       $('.modal.signup').modal('attach events', '.modal.signin .menusignup');
       $('.modal.signin').modal('attach events', '.modal.signup .menusignin');
       $('.modal.forgotpass').modal('attach events', '.modal.signin .menuforgotpass');
-   
+      
+      sAlert.error("vous devez vous connecter pour rejoindre cette entrainement");
       $('.modal.signin').modal('show');
 
-      alert("vous devez vous connecter pour rejoindre cette entrainement");
     }else{ 
       Meteor.call('upmember', this._id); 
       sAlert.success(`Congratulation your are join ${this.title} !`);
