@@ -19,10 +19,10 @@ template(name='labelUser')
 			.metadata
 				.date {{submittedText}}
 			.text
-				p(style="white-space: pre") {{body}}
+				p.body {{body}}
 
 	else if equals etat "postPage"
 		a.ui.tiny.image.profileMember
-			img(src="{{member.avatarMega}}" data-memberid="{{id}}")
+			img(src="{{member.avatarMega}}" data-memberid="{{id}}")(style="cursor:pointer")
 
 
