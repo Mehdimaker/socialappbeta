@@ -1,4 +1,7 @@
 Template.postsMap.rendered = function() {
+  let newHeight = $(window).height() -(68 *2);
+  console.log(newHeight);
+  document.getElementById("map").style.height = newHeight.toString() + "px" ;
   // Initialize Map
   var startPosition = [48.8588, 2.350];
   var map = L.map("map").setView(startPosition, 10);
@@ -23,7 +26,11 @@ Template.postsMap.rendered = function() {
   for (let i in posts){
     if(posts[i].latlng){
         var marker = L.marker(posts[i].latlng, {icon: greenIcon}).addTo(map)
-        .bindPopup(posts[i].address);
+        .bindPopup(`
+        <h3 class="ui header">${posts[i].title}
+          <div class="sub header">${posts[i].address}</div>
+        </h3>
+        <a class="ui tiny fluid button" href="posts/${posts[i]._id}">Go!</a>`);
     }
   }
 

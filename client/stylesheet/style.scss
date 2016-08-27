@@ -50,7 +50,6 @@ footer{
 .colorOrange{
 	color:$basecolor!important;
 }
-
 .basecolor{
 	background-color:$basecolor!important;
 }
@@ -66,6 +65,10 @@ footer{
 	background-color:$textcolor!important;
 	color:$white!important;
 }
+.ui.header:first-child{
+	margin-top:0!important;
+}
+
 /*===============================
 =            LOADING            =
 ===============================*/
@@ -139,10 +142,12 @@ img.ui.avatar.image{
 	height: 0px;
 }
 #map {
-	height: 500px;
 	width: 100%;
 	border-radius:$bd-radius;
 	z-index: 0;
+		a {
+				color: grey!important;
+			}
 }
 
 

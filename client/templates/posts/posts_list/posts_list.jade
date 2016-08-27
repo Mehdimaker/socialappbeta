@@ -1,43 +1,27 @@
 template(name="postsList")
-	.ui.grid.stackable.postlist.centered
-		.left.aligned.ten.wide.column
-			.ui.secondary.inverted.segment
-				.ui.header
-					|The next trainings 
-				.content
-					|Here the upcoming workouts, you will be even stronger!
-			if returnPostsToday
-				h3.ui.top.attached.header.inverted.center.aligned
-					|Today
-				.ui.tertiary.segment.attached
-					.ui.divided.items
-						each returnPostsToday
-							+postItem
-			if returnPostsTomorrow
-				h3.ui.top.attached.header.inverted.center.aligned
-					|Tomorrow
-				.ui.tertiary.segment.attached
-					.ui.divided.items
-						each returnPostsTomorrow
-							+postItem
-			if returnPostsNextdays
-				h3.ui.top.attached.header.inverted.center.aligned
-					|Next Days
-				.ui.tertiary.segment.attached
-					.ui.divided.items
-						each returnPostsNextdays
-							+postItem
-		//.six.wide.column
-			.ui.secondary.inverted.segment
-				.ui.header
-					|Browse the map !
-				.content
-			+mapPosts
-
-	//.ui.grid.two.columns.stackable.postlist
-		.column
-			
-		.column
+	//.ui.secondary.inverted.segment
+		.ui.header
+			|The next trainings 
+		.content
+			|Here the upcoming workouts, you will be even stronger!
+	if returnPostsToday
+		h3.ui.top.attached.header.inverted.center.aligned
+			|Today
+		.ui.tertiary.segment.attached
 			.ui.divided.items
-				each posts
+				each returnPostsToday
+					+postItem
+	if returnPostsTomorrow
+		h3.ui.top.attached.header.inverted.center.aligned
+			|Tomorrow
+		.ui.tertiary.segment.attached
+			.ui.divided.items
+				each returnPostsTomorrow
+					+postItem
+	if returnPostsNextdays
+		h3.ui.top.attached.header.inverted.center.aligned
+			|Next Days
+		.ui.tertiary.segment.attached
+			.ui.divided.items
+				each returnPostsNextdays
 					+postItem

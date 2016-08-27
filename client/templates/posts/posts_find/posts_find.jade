@@ -1,0 +1,60 @@
+template(name="postsFind")
+	.ui.grid.postsFind
+		.two.wide.column
+			.ui.vertical.icon.menu.pointing.inverted.nav-pills
+				a.item.active(data-template='postsList', role='presentation')
+					i.icon.unordered.list
+					|List
+				a.item(data-template='postsMap', role='presentation')
+					i.icon.marker
+					|Map
+		.fourteen.wide.column
+			+Template.dynamic template=tab }}
+
+
+	//.ui.grid.stackable.postlist.centered
+		.left.aligned.ten.wide.column
+
+			.ui.secondary.inverted.segment
+				.ui.header
+					|The next trainings 
+				.content
+					|Here the upcoming workouts, you will be even stronger!
+			if returnPostsToday
+				h3.ui.top.attached.header.inverted.center.aligned
+					|Today
+				.ui.tertiary.segment.attached
+					.ui.divided.items
+						each returnPostsToday
+							+postItem
+			if returnPostsTomorrow
+				h3.ui.top.attached.header.inverted.center.aligned
+					|Tomorrow
+				.ui.tertiary.segment.attached
+					.ui.divided.items
+						each returnPostsTomorrow
+							+postItem
+			if returnPostsNextdays
+				h3.ui.top.attached.header.inverted.center.aligned
+					|Next Days
+				.ui.tertiary.segment.attached
+					.ui.divided.items
+						each returnPostsNextdays
+							+postItem
+
+
+
+		//.six.wide.column
+			.ui.secondary.inverted.segment
+				.ui.header
+					|Browse the map !
+				.content
+			+mapPosts
+
+	//.ui.grid.two.columns.stackable.postlist
+		.column
+			
+		.column
+			.ui.divided.items
+				each posts
+					+postItem

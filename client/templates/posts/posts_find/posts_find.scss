@@ -1,0 +1,14 @@
+
+@import '../../../stylesheet/variables.scss';
+.postsFind{
+	.ui.vertical.icon.menu{
+		background-color:$textcolor!important;
+		color:$white!important;
+		.active.item{
+			background-color:lighten( $textcolor, 15% )!important;
+		}
+		.active.item:after{
+			background-color:lighten( $textcolor, 15% )!important;
+		}
+	}
+}
