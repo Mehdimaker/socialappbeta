@@ -45,11 +45,11 @@ template(name="postItem")
 				.content
 					a.header(href="{{pathFor 'postPage'}}") {{title}}
 					.meta
-						i.icon.calendar
-						|{{displayDay startPost}} at {{displayHour startPost}}
-					.meta
 						i.icon.marker
 						| {{address}}
+					.meta
+						i.icon.calendar
+						|{{displayDay startPost}} at {{displayHour startPost}}
 					.extra
 						+labelUser(id=authorId etat="host")
 						.ui.label 
@@ -69,11 +69,11 @@ template(name="postItem")
 				.content
 					a.header(href="{{pathFor 'postPage'}}") {{title}}
 					.meta
-						i.icon.calendar
-						|{{displayDay startPost}} at {{displayHour startPost}}
-					.meta
 						i.icon.marker
 						| {{address}}
+					.meta
+						i.icon.calendar
+						|{{displayDay startPost}} at {{displayHour startPost}}
 					.extra
 						+labelUser(id=authorId etat="host")
 						.ui.label 

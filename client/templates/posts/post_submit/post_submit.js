@@ -1,4 +1,3 @@
-import '/imports/config/config-google.js';
 
 let activeAutocomplete = false;
 /*==================================
@@ -9,7 +8,7 @@ Template.postSubmit.onRendered(function () {
     onSuccess : function(e){
       e.preventDefault();
     // ADD LOADING
-    $(".ui.equal.width.form.postSubmit.error .ui.button.submit").addClass("loading");
+    $(".postSubmit .ui.button.submit").addClass("loading");
     // VARIABLES
     var address = $(e.target).find('[name=address]').val();
     var addressArray=  address.split(/[,,]/);

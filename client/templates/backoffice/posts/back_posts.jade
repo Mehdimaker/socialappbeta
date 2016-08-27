@@ -1,0 +1,22 @@
+template(name='backPosts')
+	table.ui.single.line.table.inverted
+		thead
+			tr
+				th title
+				th authorId
+				th membersCount
+				th.right.aligned Action
+		tbody
+			each this
+				tr
+					td {{title}}
+					td {{authorId}}
+					td {{membersCount}}
+					td.right.aligned 
+						a.ui.icon.button.tiny.grey(href="{{pathFor 'postEdit'}}")
+							i.edit.icon
+						button.ui.icon.button.tiny.red.deletePost
+							i.trash.icon
+
+
+

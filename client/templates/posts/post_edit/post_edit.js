@@ -1,5 +1,4 @@
 import moment from "moment";
-import '/imports/config/config-google.js';
 
 let activeAutocomplete = false;
 /*==================================
@@ -10,7 +9,7 @@ Template.postEdit.onRendered(function () {
     onSuccess : function(e){
       e.preventDefault();
     // ADD LOADING
-    $(".ui.button.submit").addClass("loading");
+    $(".postEdit .ui.button.submit").addClass("loading");
     // VARIABLES
     var address = $(e.target).find('[name=address]').val();
     var addressArray =  address.split(/[,,]/);

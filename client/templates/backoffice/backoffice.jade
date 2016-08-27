@@ -1,0 +1,10 @@
+template(name='backoffice')
+	.ui.inverted.menu.pointing.nav-pills
+		a.item.active(data-template='backUsers', role='presentation')
+			|Users
+		a.item(data-template='backPosts', role='presentation')
+			|Posts
+
+	+Template.dynamic template=tab data=tabData}}
+
+

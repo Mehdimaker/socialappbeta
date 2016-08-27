@@ -1,0 +1,21 @@
+template(name='backUsers')
+	table.ui.single.line.table.inverted
+		thead
+			tr
+				th Avatar
+				th Username
+				th Email
+				th.right.aligned Action
+		tbody
+			each this
+				tr
+					td
+						img(src="{{avatarMini}}")
+					td {{username}}
+					td
+						each emails
+							|{{address}}
+					td.right.aligned
+						button.ui.icon.button.tiny.red.deleteUser
+							i.trash.icon
+

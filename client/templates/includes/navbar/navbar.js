@@ -8,6 +8,13 @@ Template.navbar.helpers({
     });
 
     return active && 'active';
+  },
+  isAdmin: function(){
+    if(Roles.userIsInRole(Meteor.userId(), ['admin'])){
+      return true;
+    }else{
+      return false;
+    }
   }
 });
 

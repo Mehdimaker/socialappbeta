@@ -13,9 +13,13 @@ template(name='home')
 					a.item(href="{{pathFor 'dashboard'}}")
 						|Dashboard
 						i.icon.dashboard
-					a.item.profile(href="{{pathFor 'editProfile'}}")
+					a.item(href="{{pathFor 'editProfile'}}")
 						|Settings
 						i.icon.setting
+					if isAdmin
+						a.item(href="{{pathFor 'backoffice'}}")
+							|Backoffice
+							i.icon.protect
 					.item.modalsignout
 						|Sign out
 						i.sign.out.icon.red

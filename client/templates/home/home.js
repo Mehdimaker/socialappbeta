@@ -22,7 +22,18 @@ Template.home.rendered = function() {
 
 }
 
+Template.home.helpers({
+  isAdmin: function(){
+    if(Roles.userIsInRole(Meteor.userId(), ['admin'])){
+      return true;
+    }else{
+      return false;
+    }
+  }
+});
 
+
+ 
 Template.home.events({
   'mouseenter .dropdown': function() {
     $('.dropdown').dropdown({
