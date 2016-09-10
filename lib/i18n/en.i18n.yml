@@ -1,2 +1,16 @@
-hello: hello boy
-helpme: if you have an idea, a sugestion a remarque about hom to improve our application call me or send me a mail !
+#NAVBAR
+navbar_find: FIND
+navbar_create: START
+navbar_dashboard: Dashboard
+navbar_settings: Settings
+navbar_backoffice: Backoffice
+navbar_signout: Sign out
+navbar_signin: Sign in
+navbar_signup: Sign up
+
+#MODAL AYS
+ays_signout: Are you sure you want to disconnect?
+ays_leave_post: Are you sure you want to leave this training?
+ays_delete_post: Are you sure you want to delete this training?
+ays_yes: yes
+ays_no: no

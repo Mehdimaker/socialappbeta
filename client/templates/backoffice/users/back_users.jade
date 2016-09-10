@@ -5,6 +5,7 @@ template(name='backUsers')
 				th Avatar
 				th Username
 				th Email
+				th Id
 				th.right.aligned Action
 		tbody
 			each this
@@ -15,6 +16,7 @@ template(name='backUsers')
 					td
 						each emails
 							|{{address}}
+					td {{_id}}
 					td.right.aligned
 						button.ui.icon.button.tiny.red.deleteUser
 							i.trash.icon

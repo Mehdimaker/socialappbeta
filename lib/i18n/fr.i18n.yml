@@ -1,1 +1,16 @@
-hello: bonjour monsieur
+#NAVBAR
+navbar_find: CHERCHER
+navbar_create: CREER
+navbar_dashboard: Tableau de bord
+navbar_settings: Paramètres
+navbar_backoffice: Backoffice
+navbar_signout: Déconnexion
+navbar_signin: Connexion
+navbar_signup: Inscription
+
+#MODAL AYS
+ays_signout: Êtes-vous sûr de vouloir vous déconnecter ?
+ays_leave_post: Êtes-vous sûr de vouloir quitter cette entrainement ?
+ays_delete_post: Êtes-vous sûr de vouloir supprimer cette entrainement ?
+ays_yes: oui
+ays_no: non

@@ -3,17 +3,17 @@ template(name='navbar')
 		.ui.container
 			a(href="{{pathFor 'home'}}")
 				h3.item.borderless
-					|SPORTAPP 
+					|WILLTEAM 
 					// {{_ "hello"}}
 					//.ui.black.label 0.2
 			.right.menu
 				if currentUser
 					a.item.borderless(href="{{pathFor 'postSubmit'}}" class="{{activeRouteClass 'postSubmit'}}")
 						i.plus.icon
-						p START
+						p {{_ "navbar_create"}}
 					a.item.borderless(href="{{pathFor 'postsFind'}}" class="{{activeRouteClass 'postsFind'}}")
 						i.search.icon
-						p FIND
+						p {{_ "navbar_find"}}
 					//a.item.large.borderless(href="{{pathFor 'dashboard'}}" class="{{activeRouteClass 'dashboard'}}")
 						i.grid.dashboard.icon
 						| DASHBOARD
@@ -23,24 +23,24 @@ template(name='navbar')
 						//i.dropdown.icon
 						.menu
 							a.item(href="{{pathFor 'dashboard'}}")
-								|Dashboard
+								|{{_ "navbar_dashboard"}}
 								i.icon.dashboard
 							a.item(href="{{pathFor 'editProfile'}}")
-								|Settings
+								|{{_ "navbar_settings"}}
 								i.icon.setting
 							if isAdmin
 								a.item(href="{{pathFor 'backoffice'}}")
-									|Backoffice
+									|{{_ "navbar_backoffice"}}
 									i.icon.protect
 							.item.modalsignout
-								|Sign out
+								|{{_ "navbar_signout"}}
 								i.sign.out.icon.red
 				else
 					.ui.item.top.right.borderless
 						a.ui.basic.inverted.button.tiny.modalsignS(data-modal="signin")
-							| Sign In
+							| {{_ "navbar_signin"}}
 						a.ui.basic.inverted.button.tiny.modalsignS(data-modal="signup")
-							| Sign Up
+							| {{_ "navbar_signup"}}
 	//.ui.navbar.menu.navbartwo.fixed.top
 		.ui.container
 			a.item.large(href="{{pathFor 'dashboard'}}" class="{{activeRouteClass 'dashboard'}}")

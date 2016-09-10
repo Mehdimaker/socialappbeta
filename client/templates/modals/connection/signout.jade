@@ -1,11 +1,11 @@
 template(name='signout')
 	.ui.basic.modal.signout
 		h2
-			| Are you sure you want to disconnect?
+			| {{_ "ays_signout"}}
 		.actions
 			.ui.red.inverted.button.cancel
 				i.remove.icon
-				| No
+				| {{_ "ays_no"}}
 			.ui.green.inverted.button.approve
 				i.checkmark.icon
-				| Yes
+				| {{_ "ays_yes"}}

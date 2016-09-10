@@ -1,21 +1,13 @@
 {
-  "name": "socialappbeta",
+  "name": "app-willteam",
   "version": "1.0.0",
-  "description": "* probleme moment js * corriger Set username * ajouter Hashtag",
+  "description": "app sport",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Mehdimaker/socialappbeta.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Mehdimaker/socialappbeta/issues"
-  },
-  "homepage": "https://github.com/Mehdimaker/socialappbeta#readme",
   "dependencies": {
     "moment": "^2.14.1"
   },

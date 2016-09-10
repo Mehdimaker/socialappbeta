@@ -1,11 +1,11 @@
 template(name='modalLeave')
 	.ui.basic.modal.leave
 		h2
-			| Are you sure you want to leave this training?
+			| {{_ "ays_leave_post"}}
 		.actions
 			.ui.red.inverted.button.cancel
 				i.remove.icon
-				| No
+				| {{_ "ays_no"}}
 			.ui.green.inverted.button.approve
 				i.checkmark.icon
-				| Yes
+				| {{_ "ays_yes"}}
