@@ -34,13 +34,20 @@ template(name='home')
 		.column 	
 			h1 WILLTEAM
 				//.ui.label 0.2
-			p find your sport team ! Go Go Go !
+			//p find your sport team ! Go Go Go !
+			p The will that we need !
+			//p a team to get will
 			if currentUser
-				a.ui.orange.button.large(href="{{pathFor 'dashboard'}}")
-					| Join the comunity !
+				a.ui.animated.fade.button.large.basecolor(tabindex='0' href="{{pathFor 'dashboard'}}")
+					.visible.content Join the comunity !
+					.hidden.content
+						| Go !
 			else
-				a.ui.orange.button.large.modalsignS(data-modal="signin")
-					| Join the comunity !
+				a.ui.button.large.basecolor.modalsignS(data-modal="signin") Join the comunity !
+				//.ui.button.large.basecolor.modalsignS.animated.fade(tabindex='0' data-modal="signin")
+					.visible.content Join the comunity !
+					.hidden.content
+						| Go !
 
 
 

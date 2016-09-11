@@ -2,10 +2,11 @@ template(name='postSubmit')
 	.ui.grid.stackable.centered
 		.eleven.wide.column.left.aligned
 			.ui.equal.width.form.error.postSubmit
-				.ui.segment.bgtextcolor
+				.ui.segment.bigTitle
 					.ui.header
 						| CREATE YOUR WORKOUT !
-					p Complete the form and give the opportunity to the community to join you!
+					.sub-header
+						| Complete the form and give the opportunity to the community to join you!
 				.field
 					label Title
 					input(name="title" type='text' )

@@ -1,44 +1,67 @@
 template(name='dashboard')
 	//.ui.grid.stackable.centered
-		.ui.statistics
-			.statistic
-				.value
-					| {{CountCurrentPosts}}
-				.label
-					| Next Workout
-			.statistic
-				.value
-					| {{CountClosedPosts}}
-				.label
-					| Passed Workout
-			.statistic
-				.value
-					//i.marker.icon
-					|  {{currentUser.location}}
-				.label
-					| Favorite location
+		.ui.tertiary.segment
+			.ui.statistics
+				.statistic
+					.value
+						| {{CountCurrentPosts}}
+					.label
+						| Next Workout
+				.statistic
+					.value
+						| {{CountClosedPosts}}
+					.label
+						| Passed Workout
+				.statistic
+					.value
+						//i.marker.icon
+						|  {{currentUser.location}}
+					.label
+						| Favorite location
 
 
-	.ui.two.column.doubling.stackable.grid.container.postlist
-		.row
-			.column
+	.ui.grid.stackable.postlist
+			.four.wide.column
+				+imgEdit
+				.ui.inverted.segment
+					.ui.inverted.relaxed.divided.list
+						.item
+							.content
+								.sub-header
+									| Username
+								.sub-header.right.floated.colorOrange 
+									|{{currentUser.username}}
+								
+						.item
+							.sub-header
+									| Location
+								.sub-header.right.floated.colorOrange 
+									|{{currentUser.location}}
+						.item
+							.sub-header
+									| Bio
+								.sub-header.colorOrange(style="text-align: right")
+									|{{currentUser.bio}}
+
+						
+
+			.twelve.wide.column
 				h3.ui.top.attached.header.inverted.center.aligned
 					|Your next workout
-					.ui.red.circular.right.label
+					.ui.circular.right.label.basecolor
 						|{{CountCurrentPosts}}
-				.ui.tertiary.segment.attached
+				.ui.tertiary.segment.attached.list
 					if UserCurrentPosts
 						.ui.divided.items
 							each UserCurrentPosts
 								+postItem
 					else
 						p No workout
-			.column
 				h3.ui.top.attached.header.inverted.center.aligned
 					|Your passed workout
-					.ui.red.circular.label.right.floated
+					.ui.circular.label.right.floated.basecolor
 						|{{CountClosedPosts}}
-				.ui.tertiary.segment.attached
+				.ui.tertiary.segment.attached.list
 					if UserClosedPosts
 							.ui.divided.items
 								each UserClosedPosts

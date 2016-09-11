@@ -1,15 +1,18 @@
 template(name="postsFind")
-	.ui.grid.postsFind
-		.two.wide.column
-			.ui.vertical.icon.menu.pointing.inverted.nav-pills
-				a.item.active(data-template='postsList', role='presentation')
-					i.icon.unordered.list
-					|List
-				a.item(data-template='postsMap', role='presentation')
-					i.icon.marker
-					|Map
-		.fourteen.wide.column
-			+Template.dynamic template=tab }}
+	.postsFind
+		//.ui.segment.bigTitle
+				.ui.header
+					| CREATE YOUR WORKOUT !
+				.sub-header
+					| Complete the form and give the opportunity to the community to join you!
+		.ui.secondary.menu.nav-pills
+			a.item.active(data-template='postsList', role='presentation')
+				i.icon.unordered.list
+				|List
+			a.item(data-template='postsMap', role='presentation')
+				i.icon.marker
+				|Map
+		+Template.dynamic template=tab 
 
 
 	//.ui.grid.stackable.postlist.centered

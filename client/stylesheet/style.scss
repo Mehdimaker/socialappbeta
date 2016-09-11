@@ -52,6 +52,7 @@ footer{
 }
 .basecolor{
 	background-color:$basecolor!important;
+	color:$white!important;
 }
 .darkcolor{
 	background-color:$darkcolor!important;
@@ -113,8 +114,15 @@ img.ui.avatar.image{
 }
 
 /*====================================
-=            BLOCK HEADER            =
+=            SEGMENT         			  =
 ====================================*/
+.ui.segment.inverted{
+	background-color:$textcolor;
+}
+
+.ui.header{
+	margin-top:0px;
+}
 .ui.block.header{
 	border:none;
 }
@@ -123,6 +131,21 @@ img.ui.avatar.image{
 	box-shadow:none;
 	//background-color:transparent;
 }
+		.ui.tertiary.segment.attached.list{
+			margin-bottom:20px;
+			padding-bottom:14px;
+		}
+
+
+.ui.segment.bigTitle{
+		border:none;
+		box-shadow:none;
+		background-color:$textcolor;
+		color:$white;
+		.ui.header{
+			color:$white;
+		}
+	}
 
 
 

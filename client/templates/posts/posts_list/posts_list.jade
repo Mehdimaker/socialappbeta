@@ -7,21 +7,21 @@ template(name="postsList")
 	if returnPostsToday
 		h3.ui.top.attached.header.inverted.center.aligned
 			|Today
-		.ui.tertiary.segment.attached
+		.ui.tertiary.segment.attached.list
 			.ui.divided.items
 				each returnPostsToday
 					+postItem
 	if returnPostsTomorrow
 		h3.ui.top.attached.header.inverted.center.aligned
 			|Tomorrow
-		.ui.tertiary.segment.attached
+		.ui.tertiary.segment.attached.list
 			.ui.divided.items
 				each returnPostsTomorrow
 					+postItem
 	if returnPostsNextdays
 		h3.ui.top.attached.header.inverted.center.aligned
 			|Next Days
-		.ui.tertiary.segment.attached
+		.ui.tertiary.segment.attached.list
 			.ui.divided.items
 				each returnPostsNextdays
 					+postItem

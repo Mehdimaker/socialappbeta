@@ -1,3 +1,9 @@
+Tracker.autorun(function () {
+  var current = Router.current();
+  Tracker.afterFlush(function () {
+    $(window).scrollTop(0);
+  });
+});
 
 if (Accounts._resetPasswordToken) {
 	Session.set('resetPassword', Accounts._resetPasswordToken);

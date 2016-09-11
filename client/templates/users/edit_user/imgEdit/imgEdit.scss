@@ -1,0 +1,35 @@
+@import '../../../../stylesheet/variables.scss';
+
+.imgEdit{
+	#myImg{
+		width:100%;
+		img{
+			width:100%;
+			border-radius: $bd-radius;	
+		}
+
+		.mylabel{
+			background:rgba(255, 255, 255, 0.5);
+			position:absolute;
+			color:white;
+			height:35px;
+			width: 35px;
+			top:18px;
+			right:18px;
+			line-height: 30px;
+			cursor: pointer;
+			text-align:center;
+			border-radius: $bd-radius;	
+			border:none;
+			i{
+				color:$color1;
+				text-align: right;
+			}	
+		}
+		.mylabel:hover i{
+			color:$basecolor;
+		}
+	}
+
+	
+}

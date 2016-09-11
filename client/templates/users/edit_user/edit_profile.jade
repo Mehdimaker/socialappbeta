@@ -1,14 +1,9 @@
 template(name='editProfile')
 	//h1 Edit profile
-	.ui.grid.two.columns.stackable.editProfile
-		.column
-			.ui.card.small.inverted
-				.image
-					.mylabel
-						input.myFileInput(type='file' style="display:none")
-						i#testt.camera.retro.icon.large
-					img(src="{{currentUser.avatarMega}}")
-		.column
+	.ui.grid.stackable.editProfile
+		.four.wide.column
+			+imgEdit
+		.twelve.wide.column
 			table.ui.very.basic.collapsing.table(style="width:100%;")
 				tbody
 					tr

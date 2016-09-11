@@ -1,5 +1,5 @@
 Template.postsMap.rendered = function() {
-  let newHeight = $(window).height() -(68 *2);
+  let newHeight = $(window).height() -(68 *2)-54;
   console.log(newHeight);
   document.getElementById("map").style.height = newHeight.toString() + "px" ;
   // Initialize Map

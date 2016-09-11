@@ -19,3 +19,4 @@ Template.dashboard.helpers({
     	return Posts.find({startPost: {$lt: end}},{sort: {startPost: -1}}).count();
 		}
 });
+
