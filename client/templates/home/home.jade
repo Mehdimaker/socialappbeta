@@ -34,8 +34,9 @@ template(name='home')
 		.column 	
 			h1 WILLTEAM
 				//.ui.label 0.2
-			//p find your sport team ! Go Go Go !
-			p Join a sport team to get the will that you need !
+			p find your sport team ! 
+			//p Join a sport team to get the will that you need !
+			// join team, get the will, improve your skill
 			//p a team to get will
 			if currentUser
 				a.ui.animated.fade.button.large.basecolor(tabindex='0' href="{{pathFor 'dashboard'}}")
@@ -48,8 +49,3 @@ template(name='home')
 					.visible.content Join the comunity !
 					.hidden.content
 						| Go !
-
-
-
-
-
